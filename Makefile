@@ -31,5 +31,5 @@ livro:
 	$(CC) $(FLAGS) -c $(SRCDIR)/livro.cpp -o $(BUILDDIR)/livro.o
 
 clean:
-	rm -rf build/*
-	rm -rf build/$(TARGET)
+	rm -rf build/*.o
+	rm -rf $(TARGET)
