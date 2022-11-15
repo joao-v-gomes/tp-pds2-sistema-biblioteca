@@ -9,8 +9,11 @@ TARGET := main.out
 all: clean main
 	$(CC) $(FLAGS) $(LFLAGS) $(BUILDDIR)/*.o -o $(TARGET)
 
-main: usuarios cliente bibliotecario estante prateleira livro
+main: menu usuarios cliente bibliotecario estante prateleira livro
 	$(CC) $(FLAGS) -c $(SRCDIR)/main.cpp -o $(BUILDDIR)/main.o
+
+menu:
+	$(CC) $(FLAGS) -c $(SRCDIR)/menu.cpp -o $(BUILDDIR)/menu.o
 
 usuarios:
 	$(CC) $(FLAGS) -c $(SRCDIR)/usuarios.cpp -o $(BUILDDIR)/usuarios.o
