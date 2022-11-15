@@ -1,36 +1,50 @@
 #include "definitions.hpp"
+#include "menu.hpp"
 #include <iostream>
 #include <string>
 
 int main() {
-	std::cout << "---- Bem-vindo ao Sistema de Biblioteca 42!!! -----" << std::endl;
-	std::cout << "\t-- O que voce deseja fazer? --\n\n";
-
 	int opcao;
 
-	std::string textoLogin = "\t0 - Logar como Bilbiotecario \n\t1 - Logar como Cliente \n";
+	while (opcao != -1) {
 
-	std::cout << textoLogin << std::endl;
+		opcao = menuInicial();
 
-	std::cout << "Digite a opcao escolhida: ";
+		switch (opcao) {
+			case LOGIN_BIBLIOTECARIO:
+				int opcao_bibliotecario;
+				std::cout << "Login como bibliotecario" << std::endl;
 
-	std::cin >> opcao;
+				opcao_bibliotecario = menuBibliotecario();
 
-	switch (opcao) {
-		case LOGIN_BIBLIOTECARIO:
-			std::cout << "Login como bibliotecario" << std::endl;
-			break;
-		case LOGIN_USUARIO:
-			std::cout << "Login como usuario" << std::endl;
-			break;
-		default:
-			std::cout << "Login com problema! Tente novamente!" << std::endl;
-			break;
+				switch (opcao_bibliotecario) {
+					default:
+						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
+						break;
+				}
+
+				break;
+			case LOGIN_USUARIO:
+				int opcao_usuario;
+				std::cout << "Login como usuario" << std::endl;
+
+				opcao_usuario = menuUsuario();
+
+				switch (opcao_usuario) {
+					default:
+						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
+						break;
+				}
+
+				break;
+			case SAIR:
+				std::cout << "Saindo..." << std::endl;
+				break;
+			default:
+				std::cout << "Login com problema! Tente novamente!" << std::endl;
+				break;
+		}
 	}
-	std::string textoMenuUsuario = "1 - Pesquisar livro pelo nome \n \
-							2 - Pesquisar livro pelo autor \n \
-							3 - Pesquisar livro pelo assunto \n \
-							4 - Pesquisar reservas de livros \n ";
 
 	return 0;
 }
