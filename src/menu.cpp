@@ -1,6 +1,6 @@
 #include "menu.hpp"
 
-int menuInicial() {
+int menuLogin() {
 	std::cout << "---- Bem-vindo ao Sistema de Biblioteca 42!!! -----" << std::endl;
 	std::cout << "\t-- O que voce deseja fazer? --\n\n";
 

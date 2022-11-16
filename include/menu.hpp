@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-int menuInicial();
+int menuLogin();
 int menuUsuario();
 int menuBibliotecario();
 
