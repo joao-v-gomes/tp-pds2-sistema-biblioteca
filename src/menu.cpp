@@ -2,19 +2,30 @@
 
 int menuLogin() {
 	std::cout << "---- Bem-vindo ao Sistema de Biblioteca 42!!! -----" << std::endl;
-	std::cout << "\t-- O que voce deseja fazer? --\n\n";
+	std::cout << "\t-- Faça login para acessar o sistema --\n\n";
 
-	int opcao;
+	int tipoLogin;
 
-	std::string textoLogin = "\t0 - Logar como Bilbiotecario \n\t1 - Logar como Cliente \n";
+	std::string usuario, senha;
 
-	std::cout << textoLogin << std::endl;
+	// std::string textoUsuario = "\tUsuário: ";
 
-	std::cout << "Digite a opcao escolhida: ";
+	std::cout << "\tUsuário: ";
 
-	std::cin >> opcao;
+	std::cin >> usuario;
 
-	return opcao;
+	// std::string textoSenha = "\tSenha: ";
+
+	std::cout << "\tSenha: ";
+
+	std::cin >> senha;
+
+	std::cout << "Validando login... Aguarde..." << std::endl;
+
+	tipoLogin = verificarLogin(usuario, senha);
+
+	return tipoLogin;
+}
 }
 
 int menuUsuario() {
