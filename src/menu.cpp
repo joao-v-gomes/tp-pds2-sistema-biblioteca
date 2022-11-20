@@ -26,6 +26,72 @@ int menuLogin() {
 
 	return tipoLogin;
 }
+
+int verificarLogin(std::string usuario, std::string senha) {
+	int tipoLogin;
+
+	// verificar no banco o login e senha
+	// retornar o tipo de usuario para saber em qual menu entrar
+	// try-catch aqui tambem
+	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	if (C.is_open()) {
+		// std::cout << "Foi banco" << std::endl;
+
+		pqxx::nontransaction N(C);
+
+		std::string sql = "SELECT senha,tipo_usuario FROM usuarios WHERE nome ='" + usuario + "';";
+
+		pqxx::result R(N.exec(sql));
+
+		std::string senhaBD;
+		bool tipoDeUsuario;
+
+		std::cout << "Tam R: " << R.size() << std::endl;
+
+		if (R.size() != 0) {
+			senhaBD = R[0][0].as<std::string>();
+			tipoDeUsuario = R[0][1].as<bool>();
+
+			// std::cout << "SenhaBD = " << senhaBD << std::endl;
+
+			// for (pqxx::result::const_iterator c = R.begin(); c != R.end(); ++c) {
+			// 	std::cout << "ID = " << c[0].as<int>() << std::endl;
+			// 	std::cout << "Nome = " << c[1].as<std::string>() << std::endl;
+			// 	std::cout << "Senha = " << c[2].as<std::string>() << std::endl;
+			// 	std::cout << "TipoUsuario = " << c[3].as<bool>() << std::endl;
+			// 	std::cout << "Email = " << c[4].as<std::string>() << std::endl;
+			// 	std::cout << "Telefone = " << c[5].as<std::string>() << std::endl;
+			// }
+
+			if (senha == senhaBD) {
+				if (tipoDeUsuario == 1) {
+					tipoLogin = LOGIN_CLIENTE;
+				} else {
+					tipoLogin = LOGIN_BIBLIOTECARIO;
+				}
+			} else {
+				std::cout << "Senha incorreta!" << std::endl;
+				tipoLogin = LOGIN_ERRO;
+			}
+		} else {
+			std::cout << "Login incorreto!" << std::endl;
+			tipoLogin = LOGIN_ERRO;
+		}
+
+	} else {
+		std::cout << "Erro no banco!" << std::endl;
+	};
+
+	// tipoLogin = LOGIN_BIBLIOTECARIO;
+
+	// if (usuario == "c") {
+	// 	tipoLogin = LOGIN_CLIENTE;
+	// } else if (usuario == "b") {
+	// 	tipoLogin = LOGIN_BIBLIOTECARIO;
+	// }
+
+	return tipoLogin;
 }
 
 int menuUsuario() {
