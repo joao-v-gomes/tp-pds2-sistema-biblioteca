@@ -13,6 +13,7 @@ class Bibliotecario : public Usuario {
 	void cadastrarLivro(Livro livro);
 	void cadastrarPrateleira(Prateleira *prateleira);
 	void cadastrarEstante(Estante *estante);
+	void cadastrarCliente(Cliente cliente);
 	std::list<Cliente> pesquisarReserva(Livro livro);
 }
 
