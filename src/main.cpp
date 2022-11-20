@@ -16,7 +16,7 @@ int main() {
 
 	int opcao = INIT;
 
-	while (opcao != -1) {
+	while (opcao != SAIR) {
 
 		switch (opcao) {
 			case INIT:
@@ -24,6 +24,11 @@ int main() {
 				// caso der merda, fazer a opcao voltar pro INIT e executar o login novamente
 				opcao = menuLogin();
 				// std::cout << "Digitou: " << opcao << std::endl;
+
+				if (opcao == LOGIN_ERRO) {
+					opcao = INIT;
+				}
+
 				break;
 			case LOGIN_BIBLIOTECARIO:
 				// depois faremos a validacao do login
@@ -31,47 +36,52 @@ int main() {
 				opcao = MENU_BIBLIOTECARIO;
 
 				break;
-			case LOGIN_USUARIO:
+
+			case LOGIN_CLIENTE:
 				// depois faremos a validacao do login
 				std::cout << "Login como usuario" << std::endl;
-				opcao = MENU_USUARIO;
+				opcao = MENU_CLIENTE;
 
 				break;
-			case MENU_USUARIO:
-				int opcao_usuario;
-				// colocar try-throw-catch aqui tambem
-				// se der merda, falar com o usuario e retornar pro menuUsuario
-				opcao_usuario = menuUsuario();
 
-				switch (opcao_usuario) {
-					case PESQUISAR_LIVRO_NOME_USUARIO:
+			case MENU_CLIENTE:
+				int opcao_cliente;
+				// colocar try-throw-catch aqui tambem
+				// se der merda, falar com o cliente e retornar pro menuCliente
+				opcao_cliente = menuCliente();
+
+				switch (opcao_cliente) {
+					case PESQUISAR_LIVRO_NOME_CLIENTE:
 						break;
-					case PESQUISAR_LIVRO_AUTOR_USUARIO:
+					case PESQUISAR_LIVRO_AUTOR_CLIENTE:
 						break;
-					case PESQUISAR_LIVRO_ASSUNTO_USUARIO:
+					case PESQUISAR_LIVRO_ASSUNTO_CLIENTE:
 						break;
-					case PESQUISAR_RESERVAS_USUARIO:
+					case PESQUISAR_RESERVAS_CLIENTE:
 						break;
-					case CONFERIR_LISTA_EMPRESTIMOS_USUARIO:
+					case CONFERIR_LISTA_EMPRESTIMOS_CLIENTE:
 						break;
-					case CONFERIR_VALOR_MULTA_USUARIO:
+					case CONFERIR_VALOR_MULTA_CLIENTE:
 						break;
-					case PAGAR_MULTA_USUARIO:
+					case PAGAR_MULTA_CLIENTE:
 						break;
-					case VER_PERFIL_USUARIO:
+					case VER_PERFIL_CLIENTE:
 						break;
-					case LOGOFF_USUARIO:
+					case LOGOFF_CLIENTE:
 						break;
 					default:
 						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
 						break;
 				}
 				break;
+
 			case MENU_BIBLIOTECARIO:
 				int opcao_bibliotecario;
 				// colocar try-throw-catch aqui tambem
 				// se der merda, falar com o usuario e retornar pro menuUsuario
 				opcao_bibliotecario = menuBibliotecario();
+
+				std::cout << "Opcao: " << opcao_bibliotecario << std::endl;
 
 				switch (opcao_bibliotecario) {
 					case PESQUISAR_LIVRO_NOME_BIBLIOTECARIO:
@@ -83,6 +93,9 @@ int main() {
 					case PESQUISAR_RESERVAS_BIBLIOTECARIO:
 						break;
 					case EMPRESTAR_LIVRO_BIBLIOTECARIO:
+						break;
+					case CADASTRAR_CLIENTE_BIBLIOTECARIO:
+						menuCadastrarCliente();
 						break;
 					case CADASTRAR_LIVRO_BIBLIOTECARIO:
 						break;
@@ -99,11 +112,13 @@ int main() {
 						break;
 				}
 				break;
+
 			case SAIR:
 				std::cout << "Saindo..." << std::endl;
 				break;
+
 			default:
-				std::cout << "Login com problema! Tente novamente!" << std::endl;
+				std::cout << "Login invalido! Tente novamente!" << std::endl;
 				break;
 		}
 	}
