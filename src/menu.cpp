@@ -136,3 +136,16 @@ int menuBibliotecario() {
 
 	return opcao;
 }
+void menuPesquisaLivroNome() {
+
+	std::string nomeLivro;
+
+	std::cout << "Digite o nome do livro: ";
+
+	std::cin >> nomeLivro;
+
+	// pesquisa no banco o nome do livro
+}
+
+void menuCadastrarCliente() {
+	std::cout << "Entrou cadastro cliente" << std::endl;
