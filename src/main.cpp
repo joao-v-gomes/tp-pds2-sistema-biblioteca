@@ -1,9 +1,19 @@
 #include "definitions.hpp"
 #include "menu.hpp"
 #include <iostream>
+// #include <pqxx/pqxx>
 #include <string>
 
 int main() {
+	// pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	// if (C.is_open()) {
+	// 	std::cout << "Opened database successfully: " << C.dbname() << std::endl;
+	// } else {
+	// 	std::cout << "Can't open database" << std::endl;
+	// 	return 1;
+	// }
+
 	int opcao = INIT;
 
 	while (opcao != -1) {

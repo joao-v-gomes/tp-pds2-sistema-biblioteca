@@ -1,6 +1,8 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
+#include <pqxx/pqxx>
+
 #define SAIR				-1
 #define INIT				4
 #define LOGIN_BIBLIOTECARIO 0

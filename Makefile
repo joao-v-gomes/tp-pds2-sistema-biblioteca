@@ -1,13 +1,14 @@
 CC := g++
-FLAGS := -I include/ -Wall
-LFLAGS := -lm
+FLAGS := -I include/ -Wall 
+LFLAGS := -lpqxx -lpq
 BUILDDIR := build
 SRCDIR := src
 TARGET := main.out
+LIBSDIR := -L/usr/local/lib -L/usr/lib/x86_64-linux-gnu/
 
 
 all: clean main
-	$(CC) $(FLAGS) $(LFLAGS) $(BUILDDIR)/*.o -o $(TARGET)
+	$(CC) $(FLAGS) $(BUILDDIR)/*.o -o $(TARGET) $(LIBSDIR) $(LFLAGS)
 
 main: menu usuarios cliente bibliotecario estante prateleira livro
 	$(CC) $(FLAGS) -c $(SRCDIR)/main.cpp -o $(BUILDDIR)/main.o
