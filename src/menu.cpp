@@ -94,19 +94,20 @@ int verificarLogin(std::string usuario, std::string senha) {
 	return tipoLogin;
 }
 
-int menuUsuario() {
-	std::string textoMenuUsuario = "1 - Pesquisar livro pelo nome \n\
-2 - Pesquisar livro pelo autor \n\
-3 - Pesquisar livro pelo assunto \n\
-4 - Pesquisar reservas de livros \n\
-5 - Conferir lista de livros emprestados \n\
-6 - Conferir valor da multa \n\
-7 - Pagar multa \n\
-8 - Ver perfil \n";
+int menuCliente() {
+	std::string textoMenuCliente =
+		"1 - Pesquisar livro pelo nome \n"
+		"2 - Pesquisar livro pelo autor \n"
+		"3 - Pesquisar livro pelo assunto \n"
+		"4 - Pesquisar reservas de livros \n"
+		"5 - Conferir lista de livros emprestados \n"
+		"6 - Conferir valor da multa \n"
+		"7 - Pagar multa \n"
+		"8 - Ver perfil \n";
 
 	int opcao;
 
-	std::cout << textoMenuUsuario << std::endl;
+	std::cout << textoMenuCliente << std::endl;
 
 	std::cout << "Digite a opcao escolhida: ";
 
@@ -116,15 +117,17 @@ int menuUsuario() {
 }
 
 int menuBibliotecario() {
-	std::string textoMenuBibliotecario = "1 - Pesquisar livro pelo nome \n\
-2 - Pesquisar livro pelo autor \n\
-3 - Pesquisar livro pelo assunto \n\
-4 - Pesquisar reservas de livros \n\
-5 - Emprestar livro \n\
-6 - Cadastrar livro \n\
-7 - Cadastrar prateleira \n\
-8 - Cadastrar estante \n\
-9 - Ver perfil \n";
+	std::string textoMenuBibliotecario =
+		"1 - Pesquisar livro pelo nome \n"
+		"2 - Pesquisar livro pelo autor \n"
+		"3 - Pesquisar livro pelo assunto \n"
+		"4 - Pesquisar reservas de livros \n"
+		"5 - Emprestar livro \n"
+		"6 - Cadastrar livro \n"
+		"7 - Cadastrar prateleira \n"
+		"8 - Cadastrar estante \n"
+		"9 - Cadastrar cliente \n"
+		"10 - Ver perfil \n";
 
 	int opcao;
 
@@ -136,6 +139,7 @@ int menuBibliotecario() {
 
 	return opcao;
 }
+
 void menuPesquisaLivroNome() {
 
 	std::string nomeLivro;
@@ -149,3 +153,4 @@ void menuPesquisaLivroNome() {
 
 void menuCadastrarCliente() {
 	std::cout << "Entrou cadastro cliente" << std::endl;
+};
