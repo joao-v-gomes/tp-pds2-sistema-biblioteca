@@ -16,12 +16,11 @@ class Usuario {
 
   public:
 	Usuario();
-	Usuario(int id, bool tipoDeUsuario, std::string nome, std::string senha, std::string email, std::string telefone);
 
 	Livro pesquisarLivroPorNome(std::string nomeLivroPesquisado);
 	std::list<Livro> pesquisarLivroPorAutor(std::string nomeAutorPesquisado);
 	std::list<Livro> pesquisarLivroPorAssunto(std::string assuntoPesquisado);
-	virtual std::list<Cliente> pesquisarReserva(Livro livroPesquisado);
+	// virtual std::list<Cliente> pesquisarReserva(Livro livroPesquisado);
 	void setId(int id);
 	void setNome(std::string nome);
 	void setSenha(std::string senha);

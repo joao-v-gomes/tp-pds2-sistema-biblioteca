@@ -17,7 +17,7 @@ class Cliente : public Usuario {
 	void reservarLivro(Livro *livro);
 	void renovarReservar(Livro *livro);
 	void pagarMulta(double multa);
-	std::list<Cliente> pesquisarReserva(Livro livro);
+	// std::list<Cliente> pesquisarReserva(Livro livro);
 	int getIdCliente();
 	std::list<Livro *> getLivrosEmprestados();
 	double getMulta();
