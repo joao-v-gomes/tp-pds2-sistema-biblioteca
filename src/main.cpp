@@ -1,7 +1,6 @@
 #include "definitions.hpp"
 #include "menu.hpp"
 #include <iostream>
-// #include <pqxx/pqxx>
 #include <string>
 
 int main() {
@@ -68,6 +67,7 @@ int main() {
 					case VER_PERFIL_CLIENTE:
 						break;
 					case LOGOFF_CLIENTE:
+						opcao = INIT;
 						break;
 					default:
 						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
@@ -106,6 +106,7 @@ int main() {
 					case VER_PERFIL_BIBLIOTECARIO:
 						break;
 					case LOGOFF_BIBLIOTECARIO:
+						opcao = INIT;
 						break;
 					default:
 						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
