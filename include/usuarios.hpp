@@ -6,7 +6,7 @@
 #include <string>
 
 class Usuario {
-  private:
+  protected:
 	int _id;
 	bool _tipoDeUsuario;
 	std::string _nome;
