@@ -153,4 +153,22 @@ void menuPesquisaLivroNome() {
 
 void menuCadastrarCliente() {
 	std::cout << "Entrou cadastro cliente" << std::endl;
+
+	std::string nome, senha, email, telefone;
+
+	std::cout << "Digite o nome do Cliente: ";
+	std::cin >> nome;
+	std::cout << "Digite a senha do Cliente: ";
+	std::cin >> senha;
+	std::cout << "Digite o email do Cliente: ";
+	std::cin >> email;
+	std::cout << "Digite o telefone do Cliente: ";
+	std::cin >> telefone;
+
+	Cliente novoCliente = Cliente(nome, senha, email, telefone);
+
+	std::cout << "Nome: " << novoCliente.getNome();
+	std::cout << "Senha: " << novoCliente.getSenha();
+	std::cout << "Email: " << novoCliente.getEmail();
+	std::cout << "Telefone: " << novoCliente.getTelefone();
 };
