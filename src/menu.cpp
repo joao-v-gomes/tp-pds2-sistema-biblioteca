@@ -83,14 +83,6 @@ int verificarLogin(std::string usuario, std::string senha) {
 		std::cout << "Erro no banco!" << std::endl;
 	};
 
-	// tipoLogin = LOGIN_BIBLIOTECARIO;
-
-	// if (usuario == "c") {
-	// 	tipoLogin = LOGIN_CLIENTE;
-	// } else if (usuario == "b") {
-	// 	tipoLogin = LOGIN_BIBLIOTECARIO;
-	// }
-
 	return tipoLogin;
 }
 
