@@ -19,6 +19,6 @@ class Estante {
 	void setIdEstante(int id);
 	void setCategoria(std::string categoria);
 	void setPrateleiras(std::list<Prateleira> listaPrateleiras);
-}
+};
 
 #endif

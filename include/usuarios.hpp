@@ -33,6 +33,6 @@ class Usuario {
 	std::string getSenha();
 	std::string getEmail();
 	std::string getTelefone();
-}
+};
 
 #endif

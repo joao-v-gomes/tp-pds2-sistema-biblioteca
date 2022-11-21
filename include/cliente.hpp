@@ -23,6 +23,6 @@ class Cliente : public Usuario {
 	double getMulta();
 	void setTipoUsuario(bool tipoUsuario);
 	void setMulta(double multa);
-}
+};
 
 #endif

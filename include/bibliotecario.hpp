@@ -15,6 +15,6 @@ class Bibliotecario : public Usuario {
 	void cadastrarEstante(Estante *estante);
 	void cadastrarCliente(Cliente cliente);
 	std::list<Cliente> pesquisarReserva(Livro livro);
-}
+};
 
 #endif

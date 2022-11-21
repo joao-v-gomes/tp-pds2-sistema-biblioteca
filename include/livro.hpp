@@ -38,6 +38,6 @@ class Livro {
 	void setIdEstanteLivro(int idEstante){_idEstante = idEstante;}
 	void setIdPrateleiraLivro(int idPrateleira){_idPrateleira = idPrateleira;}
 	void setQtdeLivro(int quantidade){_quantidade = quantidade;}
-}
+};
 
 #endif

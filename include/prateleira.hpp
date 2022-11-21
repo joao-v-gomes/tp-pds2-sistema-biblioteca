@@ -21,6 +21,6 @@ class Prateleira {
 	void setAssuntoPrateleira(std::string _assunto);
 	void setEstanteDaPrateleira(int idEstante);
 	void setListaDeLivros(std::list<Livro> listaDeLivros);
-}
+};
 
 #endif
