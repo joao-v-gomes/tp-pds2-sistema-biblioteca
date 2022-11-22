@@ -159,8 +159,27 @@ void menuCadastrarCliente() {
 
 	Cliente novoCliente = Cliente(nome, senha, email, telefone);
 
-	std::cout << "Nome: " << novoCliente.getNome() << std::endl;
-	std::cout << "Senha: " << novoCliente.getSenha() << std::endl;
-	std::cout << "Email: " << novoCliente.getEmail() << std::endl;
-	std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
-};
+	// std::cout << "Nome: " << novoCliente.getNome() << std::endl;
+	// std::cout << "Senha: " << novoCliente.getSenha() << std::endl;
+	// std::cout << "Email: " << novoCliente.getEmail() << std::endl;
+	// std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
+
+	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	if (C.is_open()) {
+
+		pqxx::work W(C);
+
+		std::string sql = "INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('" + novoCliente.getNome() + "','" + novoCliente.getSenha() + "',True,'" + novoCliente.getEmail() + "','" + novoCliente.getTelefone() + "');";
+
+		// std::cout << "sql: " << sql << std::endl;
+
+		W.exec(sql);
+
+		W.commit();
+
+		std::cout << "Cliente cadastrado com sucesso!" << std::endl;
+	} else {
+		std::cout << "Falha no BD - Cadastro Cliente" << std::endl;
+	};
+}
