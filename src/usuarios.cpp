@@ -1,6 +1,6 @@
 #include "usuarios.hpp"
+Usuario::Usuario(){};
 
-// Usuario::Usuario();
 std::string Usuario::getNome() {
 	return _nome;
 }
