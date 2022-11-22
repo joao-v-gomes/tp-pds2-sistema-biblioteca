@@ -47,7 +47,7 @@ int verificarLogin(std::string usuario, std::string senha) {
 		std::string senhaBD;
 		bool tipoDeUsuario;
 
-		std::cout << "Tam R: " << R.size() << std::endl;
+		// std::cout << "Tam R: " << R.size() << std::endl;
 
 		if (R.size() != 0) {
 			senhaBD = R[0][0].as<std::string>();
@@ -159,8 +159,8 @@ void menuCadastrarCliente() {
 
 	Cliente novoCliente = Cliente(nome, senha, email, telefone);
 
-	std::cout << "Nome: " << novoCliente.getNome();
-	std::cout << "Senha: " << novoCliente.getSenha();
-	std::cout << "Email: " << novoCliente.getEmail();
-	std::cout << "Telefone: " << novoCliente.getTelefone();
+	std::cout << "Nome: " << novoCliente.getNome() << std::endl;
+	std::cout << "Senha: " << novoCliente.getSenha() << std::endl;
+	std::cout << "Email: " << novoCliente.getEmail() << std::endl;
+	std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
 };
