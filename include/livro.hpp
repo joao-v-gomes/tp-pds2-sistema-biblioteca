@@ -1,9 +1,11 @@
 #ifndef LIVRO_H
 #define LIVRO_H
 
-#include "cliente.hpp"
+// #include "cliente.hpp"
 #include <string>
 #include <vector>
+
+class Cliente;
 
 class Livro {
   private:
