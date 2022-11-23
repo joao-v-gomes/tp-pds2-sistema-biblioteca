@@ -9,6 +9,7 @@ int main() {
 
 	int opcao = INIT;
 
+	Usuario user;
 
 	while (opcao != SAIR) {
 
@@ -16,7 +17,7 @@ int main() {
 			case INIT:
 				// colocar o try-throw-catch aqui pra pegar alguma merda que o usuario digitar
 				// caso der merda, fazer a opcao voltar pro INIT e executar o login novamente
-				opcao = menuLogin();
+				opcao = menuLogin(&user);
 
 				// std::cout << user.getNome() << std::endl;
 				// std::cout << user.getEmail() << std::endl;
@@ -100,7 +101,7 @@ int main() {
 					case EMPRESTAR_LIVRO_BIBLIOTECARIO:
 						break;
 					case CADASTRAR_CLIENTE_BIBLIOTECARIO:
-						menuCadastrarCliente();
+						menuCadastrarCliente(&user);
 						break;
 					case CADASTRAR_LIVRO_BIBLIOTECARIO:
 						break;
