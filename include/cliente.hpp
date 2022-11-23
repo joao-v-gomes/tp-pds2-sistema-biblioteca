@@ -14,6 +14,7 @@ class Cliente : public Usuario {
 	Cliente();
 	Cliente(int id, bool tipoDeUsuario, std::string nome, std::string senha, std::string email, std::string telefone);
 	Cliente(std::string nome, std::string senha, std::string email, std::string telefone);
+	Cliente(std::string nome, std::string email, std::string telefone);
 	void reservarLivro(Livro *livro);
 	void renovarReservar(Livro *livro);
 	void pagarMulta(double multa);
