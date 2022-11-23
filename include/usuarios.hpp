@@ -22,12 +22,14 @@ class Usuario {
 	std::list<Livro> pesquisarLivroPorAssunto(std::string assuntoPesquisado);
 	// virtual std::list<Cliente> pesquisarReserva(Livro livroPesquisado);
 	void setId(int id);
+	void setTipoUsuario(bool tipoUsuario);
 	void setNome(std::string nome);
 	void setSenha(std::string senha);
 	void setEmail(std::string email);
 	void setTelefone(std::string telefone);
 
 	int getId();
+	bool getTipoUsuario();
 	std::string getNome();
 	std::string getSenha();
 	std::string getEmail();
