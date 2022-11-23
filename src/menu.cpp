@@ -1,6 +1,6 @@
 #include "menu.hpp"
 
-int menuLogin() {
+int menuLogin(Usuario *user) {
 	std::cout << "---- Bem-vindo ao Sistema de Biblioteca 42!!! -----" << std::endl;
 	std::cout << "\t-- Faça login para acessar o sistema --\n\n";
 
@@ -22,12 +22,16 @@ int menuLogin() {
 
 	std::cout << "Validando login... Aguarde..." << std::endl;
 
-	tipoLogin = verificarLogin(usuario, senha);
+	tipoLogin = verificarLogin(user, usuario, senha);
+
+	// std::cout << user->getNome() << std::endl;
+	// std::cout << user->getEmail() << std::endl;
+	// std::cout << user->getTelefone() << std::endl;
 
 	return tipoLogin;
 }
 
-int verificarLogin(std::string usuario, std::string senha) {
+int verificarLogin(Usuario *user, std::string usuario, std::string senha) {
 	int tipoLogin;
 
 	// verificar no banco o login e senha
@@ -40,18 +44,21 @@ int verificarLogin(std::string usuario, std::string senha) {
 
 		pqxx::nontransaction N(C);
 
-		std::string sql = "SELECT senha,tipo_usuario FROM usuarios WHERE nome ='" + usuario + "';";
+		std::string sql = "SELECT * FROM usuarios WHERE nome ='" + usuario + "';";
 
 		pqxx::result R(N.exec(sql));
 
-		std::string senhaBD;
+		std::string nomeBD, senhaBD, emailBD, telefoneBD;
 		bool tipoDeUsuario;
 
 		// std::cout << "Tam R: " << R.size() << std::endl;
 
 		if (R.size() != 0) {
-			senhaBD = R[0][0].as<std::string>();
-			tipoDeUsuario = R[0][1].as<bool>();
+			nomeBD = R[0][1].as<std::string>();
+			senhaBD = R[0][2].as<std::string>();
+			tipoDeUsuario = R[0][3].as<bool>();
+			emailBD = R[0][4].as<std::string>();
+			telefoneBD = R[0][5].as<std::string>();
 
 			// std::cout << "SenhaBD = " << senhaBD << std::endl;
 
@@ -65,10 +72,24 @@ int verificarLogin(std::string usuario, std::string senha) {
 			// }
 
 			if (senha == senhaBD) {
+
+				user->setNome(nomeBD);
+				user->setEmail(emailBD);
+				user->setTelefone(telefoneBD);
+
+				// std::cout << user->getNome() << std::endl;
+				// std::cout << user->getEmail() << std::endl;
+				// std::cout << user->getTelefone() << std::endl;
+
 				if (tipoDeUsuario == 1) {
 					tipoLogin = LOGIN_CLIENTE;
+
+					// user = new Usuario(nomeBD, emailBD, telefoneBD);
+
 				} else {
 					tipoLogin = LOGIN_BIBLIOTECARIO;
+
+					// user = new Usuario(nomeBD, emailBD, telefoneBD);
 				}
 			} else {
 				std::cout << "Senha incorreta!" << std::endl;
@@ -95,7 +116,8 @@ int menuCliente() {
 		"5 - Conferir lista de livros emprestados \n"
 		"6 - Conferir valor da multa \n"
 		"7 - Pagar multa \n"
-		"8 - Ver perfil \n";
+		"8 - Ver perfil \n"
+		"9 - Logoff \n";
 
 	int opcao;
 
@@ -119,7 +141,8 @@ int menuBibliotecario() {
 		"7 - Cadastrar prateleira \n"
 		"8 - Cadastrar estante \n"
 		"9 - Cadastrar cliente \n"
-		"10 - Ver perfil \n";
+		"10 - Ver perfil \n"
+		"11 - Logoff \n";
 
 	int opcao;
 
@@ -143,7 +166,14 @@ void menuPesquisaLivroNome() {
 	// pesquisa no banco o nome do livro
 }
 
-void menuCadastrarCliente() {
+void menuCadastrarCliente(Usuario *user) {
+
+	Bibliotecario *b = new Bibliotecario(user);
+
+	// std::cout << user->getNome() << std::endl;
+	// std::cout << user->getEmail() << std::endl;
+	// std::cout << user->getTelefone() << std::endl;
+
 	std::cout << "Entrou cadastro cliente" << std::endl;
 
 	std::string nome, senha, email, telefone;
@@ -164,22 +194,5 @@ void menuCadastrarCliente() {
 	// std::cout << "Email: " << novoCliente.getEmail() << std::endl;
 	// std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
 
-	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
-
-	if (C.is_open()) {
-
-		pqxx::work W(C);
-
-		std::string sql = "INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('" + novoCliente.getNome() + "','" + novoCliente.getSenha() + "',True,'" + novoCliente.getEmail() + "','" + novoCliente.getTelefone() + "');";
-
-		// std::cout << "sql: " << sql << std::endl;
-
-		W.exec(sql);
-
-		W.commit();
-
-		std::cout << "Cliente cadastrado com sucesso!" << std::endl;
-	} else {
-		std::cout << "Falha no BD - Cadastro Cliente" << std::endl;
-	};
+	b->cadastrarCliente(novoCliente);
 }
