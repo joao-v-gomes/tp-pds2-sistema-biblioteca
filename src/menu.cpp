@@ -195,4 +195,6 @@ void menuCadastrarCliente(Usuario *user) {
 	// std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
 
 	b->cadastrarCliente(novoCliente);
+
+	delete b;
 }
