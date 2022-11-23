@@ -13,6 +13,8 @@ int main() {
 	// 	return 1;
 	// }
 
+	// teste
+
 	int opcao = INIT;
 
 	while (opcao != SAIR) {
