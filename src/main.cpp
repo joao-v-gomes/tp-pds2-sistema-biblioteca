@@ -4,18 +4,11 @@
 #include <string>
 
 int main() {
-	// pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
-
-	// if (C.is_open()) {
-	// 	std::cout << "Opened database successfully: " << C.dbname() << std::endl;
-	// } else {
-	// 	std::cout << "Can't open database" << std::endl;
-	// 	return 1;
-	// }
 
 	// teste
 
 	int opcao = INIT;
+
 
 	while (opcao != SAIR) {
 
@@ -24,6 +17,11 @@ int main() {
 				// colocar o try-throw-catch aqui pra pegar alguma merda que o usuario digitar
 				// caso der merda, fazer a opcao voltar pro INIT e executar o login novamente
 				opcao = menuLogin();
+
+				// std::cout << user.getNome() << std::endl;
+				// std::cout << user.getEmail() << std::endl;
+				// std::cout << user.getTelefone() << std::endl;
+
 				// std::cout << "Digitou: " << opcao << std::endl;
 
 				if (opcao == LOGIN_ERRO) {
@@ -31,6 +29,7 @@ int main() {
 				}
 
 				break;
+
 			case LOGIN_BIBLIOTECARIO:
 				// depois faremos a validacao do login
 				std::cout << "Login como bibliotecario" << std::endl;
@@ -47,6 +46,7 @@ int main() {
 
 			case MENU_CLIENTE:
 				int opcao_cliente;
+
 				// colocar try-throw-catch aqui tambem
 				// se der merda, falar com o cliente e retornar pro menuCliente
 				opcao_cliente = menuCliente();
@@ -79,6 +79,9 @@ int main() {
 
 			case MENU_BIBLIOTECARIO:
 				int opcao_bibliotecario;
+
+				// user = new Bibliotecario(user);
+
 				// colocar try-throw-catch aqui tambem
 				// se der merda, falar com o usuario e retornar pro menuUsuario
 				opcao_bibliotecario = menuBibliotecario();

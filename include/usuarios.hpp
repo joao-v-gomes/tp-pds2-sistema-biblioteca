@@ -20,7 +20,10 @@ class Usuario {
 	Livro pesquisarLivroPorNome(std::string nomeLivroPesquisado);
 	std::list<Livro> pesquisarLivroPorAutor(std::string nomeAutorPesquisado);
 	std::list<Livro> pesquisarLivroPorAssunto(std::string assuntoPesquisado);
-	// virtual std::list<Cliente> pesquisarReserva(Livro livroPesquisado);
+
+	// void cadastrarCliente(Cliente cliente);
+
+	// virtual std::list<Cliente> pesquisarReserva(Livro livroPesquisado) = 0;
 	void setId(int id);
 	void setTipoUsuario(bool tipoUsuario);
 	void setNome(std::string nome);
