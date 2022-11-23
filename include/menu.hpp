@@ -1,15 +1,16 @@
 #ifndef MENU_H
 #define MENU_H
 
+#include "bibliotecario.hpp"
 #include "cliente.hpp"
 #include "definitions.hpp"
 #include <iostream>
 #include <string>
 
-int menuLogin();
+int menuLogin(Usuario *user);
 int menuCliente();
 int menuBibliotecario();
-void menuCadastrarCliente();
-int verificarLogin(std::string usuario, std::string senha);
+void menuCadastrarCliente(Usuario *user);
+int verificarLogin(Usuario *user, std::string usuario, std::string senha);
 
 #endif
