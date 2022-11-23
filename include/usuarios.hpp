@@ -16,7 +16,7 @@ class Usuario {
 
   public:
 	Usuario();
-
+	Usuario(std::string nome, std::string email, std::string telefone);
 	Livro pesquisarLivroPorNome(std::string nomeLivroPesquisado);
 	std::list<Livro> pesquisarLivroPorAutor(std::string nomeAutorPesquisado);
 	std::list<Livro> pesquisarLivroPorAssunto(std::string assuntoPesquisado);
