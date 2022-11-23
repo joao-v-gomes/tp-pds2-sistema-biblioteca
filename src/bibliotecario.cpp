@@ -36,3 +36,23 @@ Bibliotecario::Bibliotecario(std::string nome, std::string email, std::string te
 	_telefone = telefone;
 }
 
+void Bibliotecario::cadastrarCliente(Cliente cliente) {
+	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	if (C.is_open()) {
+
+		pqxx::work W(C);
+
+		std::string sql = "INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('" + cliente.getNome() + "','" + cliente.getSenha() + "',True,'" + cliente.getEmail() + "','" + cliente.getTelefone() + "');";
+
+		// std::cout << "sql: " << sql << std::endl;
+
+		W.exec(sql);
+
+		W.commit();
+
+		std::cout << "Cliente cadastrado com sucesso!" << std::endl;
+	} else {
+		std::cout << "Falha no BD - Cadastro Cliente" << std::endl;
+	};
+}
