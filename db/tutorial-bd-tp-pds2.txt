@@ -1,0 +1,95 @@
+Depois que tiver instalado o WSL e o Ubunto 22 da loja Microsoft
+Crie o usuario e senha e comece o tutorial abaixo:
+
+sudo apt update
+
+------------------------------------------------------------
+
+sudo apt full-upgrade
+
+------------------------------------------------------------
+
+sudo apt install make g++ libpq-dev
+
+------------------------------------------------------------
+
+git clone https://github.com/jtv/libpqxx.git
+./configure
+make -j4
+sudo make install
+
+------------------------------------------------------------
+
+sudo apt install postgresql postgresql-contrib
+
+------------------------------------------------------------
+
+sudo apt install vim
+
+------------------------------------------------------------
+
+vim /etc/postgresql/15/main/pg_hba.conf (0 15 NO CAMINHO DO ARQUIVO É A VERSAO, A SUA PODE SER DIFERENTE. NO CAUET FOI 14)
+
+comandos básicos no vim 
+
+quando abrir o arquivo, va com a seta para baixo até uma parte onde haja texto parecido com o texto abaixo: 
+
+# IPv4 local connections:
+host    all         all         127.0.0.1/32          md5
+
+para comecar escrever no vim, pressione 'i' e voce entrará no modo de inserção(canto inferior esquerdo). Nesse modo você pode digitar.
+Insira nesse ponto as duas linhas vistas acima.
+
+Pressione esc para sair do modo de insercao.
+
+pressione a tecla do dois pontos ( : )
+
+pressione ' w '.
+
+pressione ' q '.
+
+e de enter. Voce salvou e fechou o arquivo editado
+
+para recarregar o servido do postgres, execute:
+
+sudo service postgresql restart
+
+------------------------------------------------------------
+
+sudo -u postgres psql
+
+alter user postgres password '123123';
+
+------------------------------------------------------------
+
+criar um arquivo main.cpp com o codigo abaixo para testar a conexao com o banco
+
+#include <iostream>
+#include <pqxx/pqxx>
+
+using namespace std;
+using namespace pqxx;
+
+int main(int argc, char *argv[]) {
+  try {
+    connection C("dbname = postgres user = postgres password = 123123 \
+      hostaddr = 127.0.0.1 port = 5432");
+    if (C.is_open()) {
+      cout << "Opened database successfully: " << C.dbname() << endl;
+    } else {
+      cout << "Can't open database" << endl;
+      return 1;
+    }
+  } catch (const std::exception &e) {
+    cerr << e.what() << std::endl;
+    return 1;
+  }
+}
+
+------------------------------------------------------------
+
+g++ main.cpp -lpqxx -lpq -o main
+
+./main
+
+------------------------------------------------------------
