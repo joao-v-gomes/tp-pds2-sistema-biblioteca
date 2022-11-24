@@ -36,7 +36,8 @@ Bibliotecario::Bibliotecario(std::string nome, std::string email, std::string te
 	_telefone = telefone;
 }
 
-void Bibliotecario::cadastrarCliente(Cliente cliente) {
+void Bibliotecario::cadastrarCliente(Cliente *cliente) {
+	// fazer um try-catch aqui
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {
