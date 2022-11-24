@@ -2,6 +2,7 @@
 #define PRATELEIRA_H
 
 #include "livro.hpp"
+#include <list>
 #include <string>
 
 class Prateleira {
