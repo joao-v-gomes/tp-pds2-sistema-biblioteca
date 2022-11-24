@@ -195,6 +195,61 @@ void menuCadastrarCliente(Usuario *user) {
 	// std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
 
 	b->cadastrarCliente(novoCliente);
+void menuCadastraEstante(Usuario *user) {
+	std::cout << "Entrou cadastro estante" << std::endl;
+
+	Bibliotecario *b = new Bibliotecario(user);
+
+	std::string categoria;
+
+	std::cout << "Digite a categoria da estante: ";
+	std::cin >> categoria;
+
+	Estante novaEstante = Estante(categoria);
+
+	b->cadastrarEstante(&novaEstante);
 
 	delete b;
+}
+void menuCadastraLivro(Usuario *user) {
+	std::cout << "Entrou cadastro livro" << std::endl;
+
+	std::string nome, autor, edicao, assunto;
+
+	std::cout << "Digite o nome do Livro: ";
+	std::cin >> nome;
+	std::cout << "Digite o nome do autor do Livro: ";
+	std::cin >> autor;
+	std::cout << "Digite a edição do Livro: ";
+	std::cin >> edicao;
+	std::cout << "Digite o assunto do Livro: ";
+	std::cin >> assunto;
+
+	Livro novoLivro = Livro(nome, autor, edicao, assunto);
+
+	// std::cout << "Nome: " << novoLivro.getNomeLivro() << std::endl;
+	// std::cout << "Autor: " << novoLivro.getAutorLivro() << std::endl;
+	// std::cout << "Edicao: " << novoLivro.getEdicaoLivro() << std::endl;
+	// std::cout << "Assunto: " << novoLivro.getAssuntoLivro() << std::endl;
+
+	// pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	// if (C.is_open()) {
+
+	// 	pqxx::work W(C);
+
+	// 	// std::string sql = "INSERT INTO livro (NOME,AUTOR,EDICAO,ASSUNTO) VALUES ('" + novoLivro.getNome() + "','" + novoLivro.getAutorLivro() + "','" + novoLivro.getEdicaoLivro() + "','" + novoLivro.getAssuntoLivro() + "');";
+
+	// 	// std::string sql = "INSERT INTO livros (NOME,AUTOR,EDICAO,ASSUNTO,QTDE_DISPONIVEL,ESTANTE_ID,PRATELEIRA_ID) VALUES ('" + nome + "','" + autor + "','" + edicao + "','" + assunto + "','" + );";
+
+	// 	// std::cout << "sql: " << sql << std::endl;
+
+	// 	W.exec(sql);
+
+	// 	W.commit();
+
+	// 	std::cout << "Livro cadastrado com sucesso!" << std::endl;
+	// } else {
+	// 	std::cout << "Falha no BD - Cadastro Livro" << std::endl;
+	// };
 }
