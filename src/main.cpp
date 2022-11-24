@@ -113,7 +113,7 @@ int main() {
 						b->cadastrarCliente();
 						break;
 					case CADASTRAR_LIVRO_BIBLIOTECARIO:
-						b->cadastrarLivro();
+						b->cadastrarLivro(b);
 						break;
 					case CADASTRAR_PRATELEIRA_BIBLIOTECARIO:
 						b->cadastrarPrateleira(b);

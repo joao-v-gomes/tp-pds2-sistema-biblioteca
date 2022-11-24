@@ -18,13 +18,14 @@ class Bibliotecario : public Usuario {
 	Bibliotecario(std::string nome, std::string email, std::string telefone);
 	///
 	void emprestarLivro(Cliente *cliente, Livro *livro);
-	void cadastrarLivro();
+	void cadastrarLivro(Bibliotecario *b);
 	void cadastrarPrateleira(Bibliotecario *b);
 	void cadastrarEstante();
 	void cadastrarCliente();
 	std::list<Cliente> pesquisarReserva(Livro livro);
 
 	int buscaEstanteIDnobanco(std::string categoria);
+	Prateleira buscaPrateleiranobanco(std::string assunto);
 
 	virtual int exibeMenu() const override;
 

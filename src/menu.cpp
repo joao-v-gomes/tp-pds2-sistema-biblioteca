@@ -107,28 +107,28 @@ int verificarLogin(Usuario *user, std::string usuario, std::string senha) {
 	return tipoLogin;
 }
 
-int menuCliente() {
-	std::string textoMenuCliente =
-		"1 - Pesquisar livro pelo nome \n"
-		"2 - Pesquisar livro pelo autor \n"
-		"3 - Pesquisar livro pelo assunto \n"
-		"4 - Pesquisar reservas de livros \n"
-		"5 - Conferir lista de livros emprestados \n"
-		"6 - Conferir valor da multa \n"
-		"7 - Pagar multa \n"
-		"8 - Ver perfil \n"
-		"9 - Logoff \n";
+// int menuCliente() {
+// 	std::string textoMenuCliente =
+// 		"1 - Pesquisar livro pelo nome \n"
+// 		"2 - Pesquisar livro pelo autor \n"
+// 		"3 - Pesquisar livro pelo assunto \n"
+// 		"4 - Pesquisar reservas de livros \n"
+// 		"5 - Conferir lista de livros emprestados \n"
+// 		"6 - Conferir valor da multa \n"
+// 		"7 - Pagar multa \n"
+// 		"8 - Ver perfil \n"
+// 		"9 - Logoff \n";
 
-	int opcao;
+// 	int opcao;
 
-	std::cout << textoMenuCliente << std::endl;
+// 	std::cout << textoMenuCliente << std::endl;
 
-	std::cout << "Digite a opcao escolhida: ";
+// 	std::cout << "Digite a opcao escolhida: ";
 
-	std::cin >> opcao;
+// 	std::cin >> opcao;
 
-	return opcao;
-}
+// 	return opcao;
+// }
 
 // int menuBibliotecario() {
 // std::string textoMenuBibliotecario =
