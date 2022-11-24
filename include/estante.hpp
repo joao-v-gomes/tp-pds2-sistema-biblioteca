@@ -12,6 +12,8 @@ class Estante {
 	std::list<Prateleira> _prateleiras;
 
   public:
+	Estante();
+	Estante(std::string categoria);
 	int getIdEstante();
 	std::string getCategoria();
 	std::list<Prateleira> getPrateleiras();
