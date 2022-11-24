@@ -155,129 +155,129 @@ int menuBibliotecario() {
 	return opcao;
 }
 
-void menuPesquisaLivroNome() {
+// void menuPesquisaLivroNome() {
 
-	std::string nomeLivro;
+// 	std::string nomeLivro;
 
-	std::cout << "Digite o nome do livro: ";
+// 	std::cout << "Digite o nome do livro: ";
 
-	std::cin >> nomeLivro;
+// 	std::cin >> nomeLivro;
 
-	// pesquisa no banco o nome do livro
-}
+// 	// pesquisa no banco o nome do livro
+// }
 
-void menuCadastrarCliente(Usuario *user) {
+// void menuCadastrarCliente(Usuario *user) {
 
-	// std::cout << "Entrou cadastro cliente" << std::endl;
+// std::cout << "Entrou cadastro cliente" << std::endl;
 
-	// Bibliotecario *b = new Bibliotecario(user);
+// Bibliotecario *b = new Bibliotecario(user);
 
-	// // std::cout << user->getNome() << std::endl;
-	// // std::cout << user->getEmail() << std::endl;
-	// // std::cout << user->getTelefone() << std::endl;
+// // std::cout << user->getNome() << std::endl;
+// // std::cout << user->getEmail() << std::endl;
+// // std::cout << user->getTelefone() << std::endl;
 
-	// std::string nome, senha, email, telefone;
+// std::string nome, senha, email, telefone;
 
-	// std::cout << "Digite o nome do Cliente: ";
-	// std::cin >> nome;
-	// std::cout << "Digite a senha do Cliente: ";
-	// std::cin >> senha;
-	// std::cout << "Digite o email do Cliente: ";
-	// std::cin >> email;
-	// std::cout << "Digite o telefone do Cliente: ";
-	// std::cin >> telefone;
+// std::cout << "Digite o nome do Cliente: ";
+// std::cin >> nome;
+// std::cout << "Digite a senha do Cliente: ";
+// std::cin >> senha;
+// std::cout << "Digite o email do Cliente: ";
+// std::cin >> email;
+// std::cout << "Digite o telefone do Cliente: ";
+// std::cin >> telefone;
 
-	// Cliente novoCliente = Cliente(nome, senha, email, telefone);
+// Cliente novoCliente = Cliente(nome, senha, email, telefone);
 
-	// // std::cout << "Nome: " << novoCliente.getNome() << std::endl;
-	// // std::cout << "Senha: " << novoCliente.getSenha() << std::endl;
-	// // std::cout << "Email: " << novoCliente.getEmail() << std::endl;
-	// // std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
+// // std::cout << "Nome: " << novoCliente.getNome() << std::endl;
+// // std::cout << "Senha: " << novoCliente.getSenha() << std::endl;
+// // std::cout << "Email: " << novoCliente.getEmail() << std::endl;
+// // std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
 
-	// b->cadastrarCliente(&novoCliente);
+// b->cadastrarCliente(&novoCliente);
 
-	// delete b;
-}
+// delete b;
+// }
 
-void menuCadastraEstante(Usuario *user) {
-	// std::cout << "Entrou cadastro estante" << std::endl;
+// void menuCadastraEstante(Usuario *user) {
+// std::cout << "Entrou cadastro estante" << std::endl;
 
-	// Bibliotecario *b = new Bibliotecario(user);
+// Bibliotecario *b = new Bibliotecario(user);
 
-	// std::string categoria;
+// std::string categoria;
 
-	// std::cout << "Digite a categoria da estante: ";
-	// std::cin >> categoria;
+// std::cout << "Digite a categoria da estante: ";
+// std::cin >> categoria;
 
-	// Estante novaEstante = Estante(categoria);
+// Estante novaEstante = Estante(categoria);
 
-	// b->cadastrarEstante(&novaEstante);
+// b->cadastrarEstante(&novaEstante);
 
-	// delete b;
-}
+// delete b;
+// }
 
-void menuCadastraPrateleira(Usuario *user) {
-	// std::cout << "Entrou cadastro prateleira" << std::endl;
+// void menuCadastraPrateleira(Usuario *user) {
+// std::cout << "Entrou cadastro prateleira" << std::endl;
 
-	// Bibliotecario *b = new Bibliotecario(user);
+// Bibliotecario *b = new Bibliotecario(user);
 
-	// std::string assunto, categoria;
-	// int estanteID;
+// std::string assunto, categoria;
+// int estanteID;
 
-	// std::cout << "Digite o assunto da prateleira: ";
-	// std::cin >> assunto;
+// std::cout << "Digite o assunto da prateleira: ";
+// std::cin >> assunto;
 
-	// std::cout << "Digite a categoria da prateleira: ";
-	// std::cin >> categoria;
+// std::cout << "Digite a categoria da prateleira: ";
+// std::cin >> categoria;
 
-	// estanteID = b->buscaEstanteIDnobanco(categoria);
+// estanteID = b->buscaEstanteIDnobanco(categoria);
 
-	// Prateleira novaPrateleira = Prateleira(assunto, estanteID);
+// Prateleira novaPrateleira = Prateleira(assunto, estanteID);
 
-	// b->cadastrarPrateleira(&novaPrateleira);
+// b->cadastrarPrateleira(&novaPrateleira);
 
-	// delete b;
-}
+// delete b;
+// }
 
-void menuCadastraLivro(Usuario *user) {
-	std::cout << "Entrou cadastro livro" << std::endl;
+// void menuCadastraLivro(Usuario *user) {
+// 	std::cout << "Entrou cadastro livro" << std::endl;
 
-	std::string nome, autor, edicao, assunto;
+// 	std::string nome, autor, edicao, assunto;
 
-	std::cout << "Digite o nome do Livro: ";
-	std::cin >> nome;
-	std::cout << "Digite o nome do autor do Livro: ";
-	std::cin >> autor;
-	std::cout << "Digite a edição do Livro: ";
-	std::cin >> edicao;
-	std::cout << "Digite o assunto do Livro: ";
-	std::cin >> assunto;
+// 	std::cout << "Digite o nome do Livro: ";
+// 	std::cin >> nome;
+// 	std::cout << "Digite o nome do autor do Livro: ";
+// 	std::cin >> autor;
+// 	std::cout << "Digite a edição do Livro: ";
+// 	std::cin >> edicao;
+// 	std::cout << "Digite o assunto do Livro: ";
+// 	std::cin >> assunto;
 
-	Livro novoLivro = Livro(nome, autor, edicao, assunto);
+// 	Livro novoLivro = Livro(nome, autor, edicao, assunto);
 
-	// std::cout << "Nome: " << novoLivro.getNomeLivro() << std::endl;
-	// std::cout << "Autor: " << novoLivro.getAutorLivro() << std::endl;
-	// std::cout << "Edicao: " << novoLivro.getEdicaoLivro() << std::endl;
-	// std::cout << "Assunto: " << novoLivro.getAssuntoLivro() << std::endl;
+// std::cout << "Nome: " << novoLivro.getNomeLivro() << std::endl;
+// std::cout << "Autor: " << novoLivro.getAutorLivro() << std::endl;
+// std::cout << "Edicao: " << novoLivro.getEdicaoLivro() << std::endl;
+// std::cout << "Assunto: " << novoLivro.getAssuntoLivro() << std::endl;
 
-	// pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+// pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
-	// if (C.is_open()) {
+// if (C.is_open()) {
 
-	// 	pqxx::work W(C);
+// 	pqxx::work W(C);
 
-	// 	// std::string sql = "INSERT INTO livro (NOME,AUTOR,EDICAO,ASSUNTO) VALUES ('" + novoLivro.getNome() + "','" + novoLivro.getAutorLivro() + "','" + novoLivro.getEdicaoLivro() + "','" + novoLivro.getAssuntoLivro() + "');";
+// 	// std::string sql = "INSERT INTO livro (NOME,AUTOR,EDICAO,ASSUNTO) VALUES ('" + novoLivro.getNome() + "','" + novoLivro.getAutorLivro() + "','" + novoLivro.getEdicaoLivro() + "','" + novoLivro.getAssuntoLivro() + "');";
 
-	// 	// std::string sql = "INSERT INTO livros (NOME,AUTOR,EDICAO,ASSUNTO,QTDE_DISPONIVEL,ESTANTE_ID,PRATELEIRA_ID) VALUES ('" + nome + "','" + autor + "','" + edicao + "','" + assunto + "','" + );";
+// 	// std::string sql = "INSERT INTO livros (NOME,AUTOR,EDICAO,ASSUNTO,QTDE_DISPONIVEL,ESTANTE_ID,PRATELEIRA_ID) VALUES ('" + nome + "','" + autor + "','" + edicao + "','" + assunto + "','" + );";
 
-	// 	// std::cout << "sql: " << sql << std::endl;
+// 	// std::cout << "sql: " << sql << std::endl;
 
-	// 	W.exec(sql);
+// 	W.exec(sql);
 
-	// 	W.commit();
+// 	W.commit();
 
-	// 	std::cout << "Livro cadastrado com sucesso!" << std::endl;
-	// } else {
-	// 	std::cout << "Falha no BD - Cadastro Livro" << std::endl;
-	// };
-}
+// 	std::cout << "Livro cadastrado com sucesso!" << std::endl;
+// } else {
+// 	std::cout << "Falha no BD - Cadastro Livro" << std::endl;
+// };
+// }
