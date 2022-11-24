@@ -168,13 +168,13 @@ void menuPesquisaLivroNome() {
 
 void menuCadastrarCliente(Usuario *user) {
 
+	std::cout << "Entrou cadastro cliente" << std::endl;
+
 	Bibliotecario *b = new Bibliotecario(user);
 
 	// std::cout << user->getNome() << std::endl;
 	// std::cout << user->getEmail() << std::endl;
 	// std::cout << user->getTelefone() << std::endl;
-
-	std::cout << "Entrou cadastro cliente" << std::endl;
 
 	std::string nome, senha, email, telefone;
 
@@ -194,7 +194,11 @@ void menuCadastrarCliente(Usuario *user) {
 	// std::cout << "Email: " << novoCliente.getEmail() << std::endl;
 	// std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
 
-	b->cadastrarCliente(novoCliente);
+	b->cadastrarCliente(&novoCliente);
+
+	delete b;
+}
+
 void menuCadastraEstante(Usuario *user) {
 	std::cout << "Entrou cadastro estante" << std::endl;
 
@@ -211,6 +215,10 @@ void menuCadastraEstante(Usuario *user) {
 
 	delete b;
 }
+
+void menuCadastraPrateleira(Usuario *user) {
+}
+
 void menuCadastraLivro(Usuario *user) {
 	std::cout << "Entrou cadastro livro" << std::endl;
 
