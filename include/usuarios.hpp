@@ -37,6 +37,8 @@ class Usuario {
 	std::string getSenha();
 	std::string getEmail();
 	std::string getTelefone();
+
+	virtual int exibeMenu() const;
 };
 
 #endif

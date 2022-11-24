@@ -176,4 +176,29 @@ int Bibliotecario::buscaEstanteIDnobanco(std::string categoria) {
 	}
 
 	return estanteID;
-};
+}
+
+int Bibliotecario::exibeMenu() const {
+	std::string textoMenuBibliotecario =
+		"1 - Pesquisar livro pelo nome \n"
+		"2 - Pesquisar livro pelo autor \n"
+		"3 - Pesquisar livro pelo assunto \n"
+		"4 - Pesquisar reservas de livros \n"
+		"5 - Emprestar livro \n"
+		"6 - Cadastrar livro \n"
+		"7 - Cadastrar prateleira \n"
+		"8 - Cadastrar estante \n"
+		"9 - Cadastrar cliente \n"
+		"10 - Ver perfil \n"
+		"11 - Logoff \n";
+
+	int opcao;
+
+	std::cout << textoMenuBibliotecario << std::endl;
+
+	std::cout << "Digite a opcao escolhida: ";
+
+	std::cin >> opcao;
+
+	return opcao;
+}

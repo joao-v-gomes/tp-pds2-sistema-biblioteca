@@ -25,6 +25,10 @@ class Bibliotecario : public Usuario {
 	std::list<Cliente> pesquisarReserva(Livro livro);
 
 	int buscaEstanteIDnobanco(std::string categoria);
+
+	virtual int exibeMenu() const override;
+
+	virtual ~Bibliotecario() = default;
 };
 
 #endif

@@ -40,17 +40,20 @@ int main() {
 
 			case LOGIN_CLIENTE:
 				// depois faremos a validacao do login
-				std::cout << "Login como usuario" << std::endl;
+				std::cout << "Login como cliente" << std::endl;
 				opcao = MENU_CLIENTE;
 
 				break;
 
-			case MENU_CLIENTE:
+			case MENU_CLIENTE: {
 				int opcao_cliente;
+
+				Cliente *c = new Cliente(&user);
 
 				// colocar try-throw-catch aqui tambem
 				// se der merda, falar com o cliente e retornar pro menuCliente
-				opcao_cliente = menuCliente();
+				// opcao_cliente = menuCliente();
+				opcao_cliente = c->exibeMenu();
 
 				switch (opcao_cliente) {
 					case PESQUISAR_LIVRO_NOME_CLIENTE:
@@ -76,7 +79,10 @@ int main() {
 						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
 						break;
 				}
-				break;
+				delete c;
+			}
+
+			break;
 
 			case MENU_BIBLIOTECARIO: {
 
@@ -87,7 +93,8 @@ int main() {
 
 				// colocar try-throw-catch aqui tambem
 				// se der merda, falar com o usuario e retornar pro menuUsuario
-				opcao_bibliotecario = menuBibliotecario();
+				// opcao_bibliotecario = menuBibliotecario();
+				opcao_bibliotecario = b->exibeMenu();
 
 				std::cout << "Opcao: " << opcao_bibliotecario << std::endl;
 

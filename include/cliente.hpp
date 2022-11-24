@@ -3,6 +3,7 @@
 
 #include "livro.hpp"
 #include "usuarios.hpp"
+#include <iostream>
 #include <list>
 
 class Cliente : public Usuario {
@@ -12,6 +13,7 @@ class Cliente : public Usuario {
 
   public:
 	Cliente();
+	Cliente(Usuario *usuario);
 	Cliente(int id, bool tipoDeUsuario, std::string nome, std::string senha, std::string email, std::string telefone);
 	Cliente(std::string nome, std::string senha, std::string email, std::string telefone);
 	Cliente(std::string nome, std::string email, std::string telefone);
@@ -24,6 +26,10 @@ class Cliente : public Usuario {
 	double getMulta();
 	void setTipoUsuario(bool tipoUsuario);
 	void setMulta(double multa);
+
+	virtual int exibeMenu() const override;
+
+	virtual ~Cliente() = default;
 };
 
 #endif

@@ -8,6 +8,10 @@ Usuario::Usuario(std::string nome, std::string email, std::string telefone) {
 	_telefone = telefone;
 }
 
+int Usuario::exibeMenu() const {
+	return -1;
+}
+
 int Usuario::getId() {
 	return _id;
 }
