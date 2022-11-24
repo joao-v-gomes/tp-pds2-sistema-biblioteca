@@ -20,6 +20,7 @@ class Livro {
 	std::vector<Cliente> _reservas;
 
   public:
+	Livro(std::string nome, std::string autor, std::string edicao, std::string assunto);
 	// Livro();
 	//  Livro(int idLivro, String nome,int idPrateleira,int quantidade,int idEstante,int idPrateleira
 	//        string autor,string edicao,string assunto);
