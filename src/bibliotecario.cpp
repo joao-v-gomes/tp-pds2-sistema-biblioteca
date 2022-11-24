@@ -36,7 +36,23 @@ Bibliotecario::Bibliotecario(std::string nome, std::string email, std::string te
 	_telefone = telefone;
 }
 
-void Bibliotecario::cadastrarCliente(Cliente *cliente) {
+void Bibliotecario::cadastrarCliente() {
+
+	std::cout << "Entrou cadastro cliente" << std::endl;
+
+	std::string nome, senha, email, telefone;
+
+	std::cout << "Digite o nome do Cliente: ";
+	std::cin >> nome;
+	std::cout << "Digite a senha do Cliente: ";
+	std::cin >> senha;
+	std::cout << "Digite o email do Cliente: ";
+	std::cin >> email;
+	std::cout << "Digite o telefone do Cliente: ";
+	std::cin >> telefone;
+
+	Cliente novoCliente = Cliente(nome, senha, email, telefone);
+
 	// fazer um try-catch aqui
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
@@ -44,9 +60,7 @@ void Bibliotecario::cadastrarCliente(Cliente *cliente) {
 
 		pqxx::work W(C);
 
-		std::string sql = "INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('" + cliente->getNome() + "','" + cliente->getSenha() + "',True,'" + cliente->getEmail() + "','" + cliente->getTelefone() + "');";
-
-		// std::cout << "sql: " << sql << std::endl;
+		std::string sql = "INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('" + novoCliente.getNome() + "','" + novoCliente.getSenha() + "',True,'" + novoCliente.getEmail() + "','" + novoCliente.getTelefone() + "');";
 
 		W.exec(sql);
 
@@ -58,14 +72,29 @@ void Bibliotecario::cadastrarCliente(Cliente *cliente) {
 	};
 }
 
-void Bibliotecario::cadastrarEstante(Estante *estante) {
+void Bibliotecario::cadastrarEstante() {
+	std::cout << "Entrou cadastro estante" << std::endl;
+
+	// Bibliotecario *b = new Bibliotecario(user);
+
+	std::string categoria;
+
+	std::cout << "Digite a categoria da estante: ";
+	std::cin >> categoria;
+
+	Estante novaEstante = Estante(categoria);
+
+	// b->cadastrarEstante(&novaEstante);
+
+	// delete b;
+
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {
 
 		pqxx::work W(C);
 
-		std::string sql = "INSERT INTO estantes (CATEGORIA) VALUES ('" + estante->getCategoria() + "');";
+		std::string sql = "INSERT INTO estantes (CATEGORIA) VALUES ('" + novaEstante.getCategoria() + "');";
 
 		// std::cout << "sql: " << sql << std::endl;
 
@@ -79,14 +108,35 @@ void Bibliotecario::cadastrarEstante(Estante *estante) {
 	};
 }
 
-void Bibliotecario::cadastrarPrateleira(Prateleira *prateleira) {
+void Bibliotecario::cadastrarPrateleira(Bibliotecario *b) {
+	std::cout << "Entrou cadastro prateleira" << std::endl;
+
+	// Bibliotecario *b = new Bibliotecario(user);
+
+	std::string assunto, categoria;
+	int estanteID;
+
+	std::cout << "Digite o assunto da prateleira: ";
+	std::cin >> assunto;
+
+	std::cout << "Digite a categoria da prateleira: ";
+	std::cin >> categoria;
+
+	estanteID = b->buscaEstanteIDnobanco(categoria);
+
+	Prateleira novaPrateleira = Prateleira(assunto, estanteID);
+
+	// b->cadastrarPrateleira(&novaPrateleira);
+
+	// delete b;
+
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {
 
 		pqxx::work W(C);
 
-		std::string sql = "INSERT INTO prateleiras (ASSUNTO,ESTANTE_ID) VALUES ('" + prateleira->getAssuntoPrateleira() + "','" + std::to_string(prateleira->getEstanteDaPrateleira()) + "');";
+		std::string sql = "INSERT INTO prateleiras (ASSUNTO,ESTANTE_ID) VALUES ('" + novaPrateleira.getAssuntoPrateleira() + "','" + std::to_string(novaPrateleira.getEstanteDaPrateleira()) + "');";
 
 		// std::cout << "sql: " << sql << std::endl;
 
@@ -99,3 +149,31 @@ void Bibliotecario::cadastrarPrateleira(Prateleira *prateleira) {
 		std::cout << "Falha no BD - Cadastro Prateleira" << std::endl;
 	};
 }
+
+void Bibliotecario::cadastrarLivro() {
+}
+
+int Bibliotecario::buscaEstanteIDnobanco(std::string categoria) {
+
+	int estanteID;
+
+	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	if (C.is_open()) {
+		// std::cout << "Foi banco" << std::endl;
+
+		pqxx::nontransaction N(C);
+
+		std::string sql = "SELECT id FROM estantes WHERE categoria ='" + categoria + "';";
+
+		pqxx::result R(N.exec(sql));
+
+		// std::cout << "Tam R: " << R.size() << std::endl;
+
+		if (R.size() != 0) {
+			estanteID = R[0][0].as<int>();
+		}
+	}
+
+	return estanteID;
+};

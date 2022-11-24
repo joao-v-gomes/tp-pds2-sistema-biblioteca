@@ -78,10 +78,12 @@ int main() {
 				}
 				break;
 
-			case MENU_BIBLIOTECARIO:
+			case MENU_BIBLIOTECARIO: {
+
 				int opcao_bibliotecario;
 
 				// user = new Bibliotecario(user);
+				Bibliotecario *b = new Bibliotecario(&user);
 
 				// colocar try-throw-catch aqui tambem
 				// se der merda, falar com o usuario e retornar pro menuUsuario
@@ -101,16 +103,16 @@ int main() {
 					case EMPRESTAR_LIVRO_BIBLIOTECARIO:
 						break;
 					case CADASTRAR_CLIENTE_BIBLIOTECARIO:
-						menuCadastrarCliente(&user);
+						b->cadastrarCliente();
 						break;
 					case CADASTRAR_LIVRO_BIBLIOTECARIO:
-						menuCadastraLivro(&user);
+						b->cadastrarLivro();
 						break;
 					case CADASTRAR_PRATELEIRA_BIBLIOTECARIO:
-						menuCadastraPrateleira(&user);
+						b->cadastrarPrateleira(b);
 						break;
 					case CADASTRAR_ESTANTE_BIBLIOTECARIO:
-						menuCadastraEstante(&user);
+						b->cadastrarEstante();
 						break;
 					case VER_PERFIL_BIBLIOTECARIO:
 						break;
@@ -121,7 +123,10 @@ int main() {
 						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
 						break;
 				}
-				break;
+				delete b;
+			}
+
+			break;
 
 			case SAIR:
 				std::cout << "Saindo..." << std::endl;

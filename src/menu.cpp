@@ -168,91 +168,75 @@ void menuPesquisaLivroNome() {
 
 void menuCadastrarCliente(Usuario *user) {
 
-	std::cout << "Entrou cadastro cliente" << std::endl;
+	// std::cout << "Entrou cadastro cliente" << std::endl;
 
-	Bibliotecario *b = new Bibliotecario(user);
+	// Bibliotecario *b = new Bibliotecario(user);
 
-	// std::cout << user->getNome() << std::endl;
-	// std::cout << user->getEmail() << std::endl;
-	// std::cout << user->getTelefone() << std::endl;
+	// // std::cout << user->getNome() << std::endl;
+	// // std::cout << user->getEmail() << std::endl;
+	// // std::cout << user->getTelefone() << std::endl;
 
-	std::string nome, senha, email, telefone;
+	// std::string nome, senha, email, telefone;
 
-	std::cout << "Digite o nome do Cliente: ";
-	std::cin >> nome;
-	std::cout << "Digite a senha do Cliente: ";
-	std::cin >> senha;
-	std::cout << "Digite o email do Cliente: ";
-	std::cin >> email;
-	std::cout << "Digite o telefone do Cliente: ";
-	std::cin >> telefone;
+	// std::cout << "Digite o nome do Cliente: ";
+	// std::cin >> nome;
+	// std::cout << "Digite a senha do Cliente: ";
+	// std::cin >> senha;
+	// std::cout << "Digite o email do Cliente: ";
+	// std::cin >> email;
+	// std::cout << "Digite o telefone do Cliente: ";
+	// std::cin >> telefone;
 
-	Cliente novoCliente = Cliente(nome, senha, email, telefone);
+	// Cliente novoCliente = Cliente(nome, senha, email, telefone);
 
-	// std::cout << "Nome: " << novoCliente.getNome() << std::endl;
-	// std::cout << "Senha: " << novoCliente.getSenha() << std::endl;
-	// std::cout << "Email: " << novoCliente.getEmail() << std::endl;
-	// std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
+	// // std::cout << "Nome: " << novoCliente.getNome() << std::endl;
+	// // std::cout << "Senha: " << novoCliente.getSenha() << std::endl;
+	// // std::cout << "Email: " << novoCliente.getEmail() << std::endl;
+	// // std::cout << "Telefone: " << novoCliente.getTelefone() << std::endl;
 
-	b->cadastrarCliente(&novoCliente);
+	// b->cadastrarCliente(&novoCliente);
 
-	delete b;
+	// delete b;
 }
 
 void menuCadastraEstante(Usuario *user) {
-	std::cout << "Entrou cadastro estante" << std::endl;
+	// std::cout << "Entrou cadastro estante" << std::endl;
 
-	Bibliotecario *b = new Bibliotecario(user);
+	// Bibliotecario *b = new Bibliotecario(user);
 
-	std::string categoria;
+	// std::string categoria;
 
-	std::cout << "Digite a categoria da estante: ";
-	std::cin >> categoria;
+	// std::cout << "Digite a categoria da estante: ";
+	// std::cin >> categoria;
 
-	Estante novaEstante = Estante(categoria);
+	// Estante novaEstante = Estante(categoria);
 
-	b->cadastrarEstante(&novaEstante);
+	// b->cadastrarEstante(&novaEstante);
 
-	delete b;
+	// delete b;
 }
 
 void menuCadastraPrateleira(Usuario *user) {
-	std::cout << "Entrou cadastro prateleira" << std::endl;
+	// std::cout << "Entrou cadastro prateleira" << std::endl;
 
-	Bibliotecario *b = new Bibliotecario(user);
+	// Bibliotecario *b = new Bibliotecario(user);
 
-	std::string assunto, categoria;
-	int estanteID;
+	// std::string assunto, categoria;
+	// int estanteID;
 
-	std::cout << "Digite o assunto da prateleira: ";
-	std::cin >> assunto;
+	// std::cout << "Digite o assunto da prateleira: ";
+	// std::cin >> assunto;
 
-	std::cout << "Digite a categoria da prateleira: ";
-	std::cin >> categoria;
+	// std::cout << "Digite a categoria da prateleira: ";
+	// std::cin >> categoria;
 
-	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+	// estanteID = b->buscaEstanteIDnobanco(categoria);
 
-	if (C.is_open()) {
-		// std::cout << "Foi banco" << std::endl;
+	// Prateleira novaPrateleira = Prateleira(assunto, estanteID);
 
-		pqxx::nontransaction N(C);
+	// b->cadastrarPrateleira(&novaPrateleira);
 
-		std::string sql = "SELECT id FROM estantes WHERE categoria ='" + categoria + "';";
-
-		pqxx::result R(N.exec(sql));
-
-		// std::cout << "Tam R: " << R.size() << std::endl;
-
-		if (R.size() != 0) {
-			estanteID = R[0][0].as<int>();
-		}
-	}
-
-	Prateleira novaPrateleira = Prateleira(assunto, estanteID);
-
-	b->cadastrarPrateleira(&novaPrateleira);
-
-	delete b;
+	// delete b;
 }
 
 void menuCadastraLivro(Usuario *user) {
