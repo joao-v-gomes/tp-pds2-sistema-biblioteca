@@ -44,7 +44,7 @@ void Bibliotecario::cadastrarCliente(Cliente *cliente) {
 
 		pqxx::work W(C);
 
-		std::string sql = "INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('" + cliente.getNome() + "','" + cliente.getSenha() + "',True,'" + cliente.getEmail() + "','" + cliente.getTelefone() + "');";
+		std::string sql = "INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('" + cliente->getNome() + "','" + cliente->getSenha() + "',True,'" + cliente->getEmail() + "','" + cliente->getTelefone() + "');";
 
 		// std::cout << "sql: " << sql << std::endl;
 
