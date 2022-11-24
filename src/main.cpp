@@ -104,10 +104,12 @@ int main() {
 						menuCadastrarCliente(&user);
 						break;
 					case CADASTRAR_LIVRO_BIBLIOTECARIO:
+						menuCadastraLivro(&user);
 						break;
 					case CADASTRAR_PRATELEIRA_BIBLIOTECARIO:
 						break;
 					case CADASTRAR_ESTANTE_BIBLIOTECARIO:
+						menuCadastraEstante(&user);
 						break;
 					case VER_PERFIL_BIBLIOTECARIO:
 						break;
