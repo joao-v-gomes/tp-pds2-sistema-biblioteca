@@ -13,6 +13,7 @@ int menuBibliotecario();
 void menuCadastrarCliente(Usuario *user);
 void menuCadastraLivro(Usuario *user);
 void menuCadastraEstante(Usuario *user);
+void menuCadastraPrateleira(Usuario *user);
 int verificarLogin(Usuario *user, std::string usuario, std::string senha);
 
 #endif

@@ -13,6 +13,8 @@ class Prateleira {
 	std::list<Livro> livrosDaPrateleira;
 
   public:
+	Prateleira();
+	Prateleira(std::string assunto, int estanteID);
 	int getIdPrateleira();
 	std::string getAssuntoPrateleira();
 	int getEstanteDaPrateleira();

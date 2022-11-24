@@ -217,6 +217,42 @@ void menuCadastraEstante(Usuario *user) {
 }
 
 void menuCadastraPrateleira(Usuario *user) {
+	std::cout << "Entrou cadastro prateleira" << std::endl;
+
+	Bibliotecario *b = new Bibliotecario(user);
+
+	std::string assunto, categoria;
+	int estanteID;
+
+	std::cout << "Digite o assunto da prateleira: ";
+	std::cin >> assunto;
+
+	std::cout << "Digite a categoria da prateleira: ";
+	std::cin >> categoria;
+
+	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	if (C.is_open()) {
+		// std::cout << "Foi banco" << std::endl;
+
+		pqxx::nontransaction N(C);
+
+		std::string sql = "SELECT id FROM estantes WHERE categoria ='" + categoria + "';";
+
+		pqxx::result R(N.exec(sql));
+
+		// std::cout << "Tam R: " << R.size() << std::endl;
+
+		if (R.size() != 0) {
+			estanteID = R[0][0].as<int>();
+		}
+	}
+
+	Prateleira novaPrateleira = Prateleira(assunto, estanteID);
+
+	b->cadastrarPrateleira(&novaPrateleira);
+
+	delete b;
 }
 
 void menuCadastraLivro(Usuario *user) {

@@ -107,6 +107,7 @@ int main() {
 						menuCadastraLivro(&user);
 						break;
 					case CADASTRAR_PRATELEIRA_BIBLIOTECARIO:
+						menuCadastraPrateleira(&user);
 						break;
 					case CADASTRAR_ESTANTE_BIBLIOTECARIO:
 						menuCadastraEstante(&user);
