@@ -57,3 +57,24 @@ void Bibliotecario::cadastrarCliente(Cliente *cliente) {
 		std::cout << "Falha no BD - Cadastro Cliente" << std::endl;
 	};
 }
+
+void Bibliotecario::cadastrarEstante(Estante *estante) {
+	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
+
+	if (C.is_open()) {
+
+		pqxx::work W(C);
+
+		std::string sql = "INSERT INTO estantes (CATEGORIA) VALUES ('" + estante->getCategoria() + "');";
+
+		// std::cout << "sql: " << sql << std::endl;
+
+		W.exec(sql);
+
+		W.commit();
+
+		std::cout << "Estante cadastrada com sucesso!" << std::endl;
+	} else {
+		std::cout << "Falha no BD - Cadastro Estante" << std::endl;
+	};
+}
