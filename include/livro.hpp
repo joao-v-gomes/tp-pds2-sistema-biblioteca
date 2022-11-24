@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-class Cliente;
+// class Cliente;
 
 class Livro {
   private:
@@ -17,7 +17,7 @@ class Livro {
 	int _idEstante;
 	int _idPrateleira;
 	int _quantidade;
-	std::vector<Cliente> _reservas;
+	// std::vector<Cliente> _reservas;
 
   public:
 	Livro(std::string nome, std::string autor, std::string edicao, std::string assunto);
@@ -26,7 +26,7 @@ class Livro {
 	//        string autor,string edicao,string assunto);
 	// int getIdLivro ()const {return _idLivro;}
 	// std::string getNomeLivro() const{return _nome;}
-	// std::string getAUtorLivro();const{return _autor;}
+	// std::string getAutorLivro();const{return _autor;}
 	// std::string getAssuntoLivro();const{return _assunto;}
 	// int getEdicaoLivro();const{return _edicao;};
 	// int getPrateleiraLivro();const{return _idPrateleira;}
