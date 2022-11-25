@@ -75,6 +75,9 @@ int main() {
 					case LOGOFF_CLIENTE:
 						opcao = INIT;
 						break;
+					case SAIR_CLIENTE:
+						opcao = SAIR;
+						break;
 					default:
 						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
 						break;
@@ -125,6 +128,9 @@ int main() {
 						break;
 					case LOGOFF_BIBLIOTECARIO:
 						opcao = INIT;
+						break;
+					case SAIR_BIBLIOTECARIO:
+						opcao = SAIR;
 						break;
 					default:
 						std::cout << "Opcao invalida! Tente novamente!" << std::endl;

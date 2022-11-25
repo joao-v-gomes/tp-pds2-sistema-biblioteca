@@ -41,7 +41,8 @@ int Cliente::exibeMenu() const {
 		"6 - Conferir valor da multa \n"
 		"7 - Pagar multa \n"
 		"8 - Ver perfil \n"
-		"9 - Logoff \n";
+		"9 - Logoff \n"
+		"10 - Sair \n";
 
 	int opcao;
 

@@ -268,7 +268,8 @@ int Bibliotecario::exibeMenu() const {
 		"8 - Cadastrar estante \n"
 		"9 - Cadastrar cliente \n"
 		"10 - Ver perfil \n"
-		"11 - Logoff \n";
+		"11 - Logoff \n"
+		"12 - Sair \n";
 
 	int opcao;
 
