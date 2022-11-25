@@ -32,7 +32,7 @@ class Livro {
 	int getPrateleiraLivro();
 	int getEstanteLivro();
 	int getQtdeLivro();
-	// std::list<Cliente> getReservasLivro();
+	// std::vector<Cliente> getReservasLivro();
 
 	void setIdLivro(int id);
 	void setNomeLivro(std::string nome);
