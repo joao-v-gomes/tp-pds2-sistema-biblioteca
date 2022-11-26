@@ -22,7 +22,7 @@ class Cliente : public Usuario {
 	std::list<Livro *> _livrosEmprestados;
 
 	/**
-	 * @brief Valor da multa do Cliente
+	 * @brief Atributo com o valor da multa do Cliente
 	 *
 	 */
 	double _multa;

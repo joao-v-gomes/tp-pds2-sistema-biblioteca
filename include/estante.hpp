@@ -6,80 +6,82 @@
 #include <string>
 
 /**
- * @brief
- *@details
+ * @brief Armazena os atributos da classe Estante
+ *
+ *@details Uma estante possui prateleira que, por sua vez, possuem livros. A estante também possui uma Categoria,
+			como por exemplo, "Matemática", "Biologia", "Programação".
  */
 class Estante {
   private:
 	/**
-	 * @brief
+	 * @brief Atributo com o ID da estante
 	 *
 	 */
 	int _idEstante;
 
 	/**
-	 * @brief
+	 * @brief Atributo com a categoria da estante
 	 *
 	 */
 	std::string _categoria;
 
 	/**
-	 * @brief
+	 * @brief Atributo com a lista de Prateleiras da estante
 	 *
 	 */
 	std::list<Prateleira> _prateleiras;
 
   public:
 	/**
-	 * @brief Construct a new Estante object
+	 * @brief Constrói um novo objeto Estante sem inicializar nenhum atributo
 	 *
 	 */
 	Estante();
 
 	/**
-	 * @brief Construct a new Estante object
+	 * @brief Constrói um novo objeto Estante recebedo a categoria como parâmetro.
 	 *
 	 * @param categoria
 	 */
 	Estante(std::string categoria);
 
 	/**
-	 * @brief Get the Id Estante object
+	 * @brief Retorna o ID da estante
 	 *
 	 * @return int
 	 */
 	int getIdEstante();
 
 	/**
-	 * @brief Get the Categoria object
+	 * @brief Retorna a categoria da Estante
 	 *
 	 * @return std::string
 	 */
 	std::string getCategoria();
 
 	/**
-	 * @brief Get the Prateleiras object
+	 * @brief Retorna a lista de prateleiras da Estante
 	 *
 	 * @return std::list<Prateleira>
 	 */
 	std::list<Prateleira> getPrateleiras();
 
 	/**
-	 * @brief Set the Id Estante object
+	 * @brief Atualiza o ID da Estante
 	 *
 	 * @param id
 	 */
 	void setIdEstante(int id);
 
 	/**
-	 * @brief Set the Categoria object
+	 * @brief Atualiza a categoria da Estante
 	 *
 	 * @param categoria
 	 */
 	void setCategoria(std::string categoria);
 
 	/**
-	 * @brief Set the Prateleiras object
+	 * @brief Atualiza a lista de prateleiras da Estante
 	 *
 	 * @param listaPrateleiras
 	 */
