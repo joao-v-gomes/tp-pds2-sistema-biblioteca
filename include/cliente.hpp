@@ -7,39 +7,42 @@
 #include <list>
 
 /**
- * @brief
- * @details
+ * @brief Armazena as caracteristicas do Cliente
+ *
+ * @details O Bibliotecario é o "usuário comum" do sistema.
+ * Ele pode realizar as pesquisas no sistema, como buscar um livro pelo nome ou autor,
+ * fazer reservas de livros e administar suas multas por atraso.
  */
 class Cliente : public Usuario {
   private:
 	/**
-	 * @brief
+	 * @brief Atributo com a lista dos livros emprestados do Cliente
 	 *
 	 */
 	std::list<Livro *> _livrosEmprestados;
 
 	/**
-	 * @brief
+	 * @brief Valor da multa do Cliente
 	 *
 	 */
 	double _multa;
 
   public:
 	/**
-	 * @brief Construct a new Cliente object
+	 * @brief Constrói um novo objeto Cliente sem inicializar nenhum atributo
 	 *
 	 */
 	Cliente();
 
 	/**
-	 * @brief Construct a new Cliente object
+	 * @brief Constrói um novo objeto Cliente recebendo um Usuario como parâmetro
 	 *
 	 * @param usuario
 	 */
 	Cliente(Usuario *usuario);
 
 	/**
-	 * @brief Construct a new Cliente object
+	 * @brief Constrói um novo objeto Cliente recebendo o id, tipoDeUsuario, nome, senha, email e telefone.
 	 *
 	 * @param id
 	 * @param tipoDeUsuario
@@ -51,7 +54,7 @@ class Cliente : public Usuario {
 	Cliente(int id, bool tipoDeUsuario, std::string nome, std::string senha, std::string email, std::string telefone);
 
 	/**
-	 * @brief Construct a new Cliente object
+	 * @brief Constrói um novo objeto Bibliotecario recebendo o nome, senha, email e telefone.
 	 *
 	 * @param nome
 	 * @param senha
@@ -61,7 +64,7 @@ class Cliente : public Usuario {
 	Cliente(std::string nome, std::string senha, std::string email, std::string telefone);
 
 	/**
-	 * @brief Construct a new Cliente object
+	 * @brief Constrói um novo objeto Bibliotecario recebendo o nome, email e telefone.
 	 *
 	 * @param nome
 	 * @param email
@@ -70,28 +73,28 @@ class Cliente : public Usuario {
 	Cliente(std::string nome, std::string email, std::string telefone);
 
 	/**
-	 * @brief
+	 * @brief Faz a reserva de um livro
 	 *
 	 * @param livro
 	 */
 	void reservarLivro(Livro *livro);
 
 	/**
-	 * @brief
+	 * @brief Renova a reserva de um livro
 	 *
 	 * @param livro
 	 */
 	void renovarReservar(Livro *livro);
 
 	/**
-	 * @brief
+	 * @brief Realiza o pagamento da multa do Cliente
 	 *
 	 * @param multa
 	 */
 	void pagarMulta(double multa);
 
 	/**
-	 * @brief
+	 * @brief Pesquisa se um livro está reservado
 	 *
 	 * @param livro
 	 * @return std::list<Cliente>
@@ -99,42 +102,43 @@ class Cliente : public Usuario {
 	std::list<Cliente> pesquisarReserva(Livro livro);
 
 	/**
-	 * @brief Get the Id Cliente object
+	 * @brief Retorna o ID do Cliente
 	 *
 	 * @return int
 	 */
 	int getIdCliente();
 
 	/**
-	 * @brief Get the Livros Emprestados object
+	 * @brief Retorna a lista de livros emprestados do Cliente
 	 *
 	 * @return std::list<Livro *>
 	 */
 	std::list<Livro *> getLivrosEmprestados();
 
 	/**
-	 * @brief Get the Multa object
+	 * @brief Retorna o valor da multa do Cliente
 	 *
 	 * @return double
 	 */
 	double getMulta();
 
 	/**
-	 * @brief Set the Tipo Usuario object
+	 * @brief Atualiza o tipo de usuario do Cliente
 	 *
 	 * @param tipoUsuario
 	 */
 	void setTipoUsuario(bool tipoUsuario);
 
 	/**
-	 * @brief Set the Multa object
+	 * @brief Atualiza o valor da multa do Cliente
 	 *
 	 * @param multa
 	 */
 	void setMulta(double multa);
 
 	/**
-	 * @brief
+	 * @brief Reescrita do método exibeMenu() do Usuario para exibir o menu do Cliente.
+	 * 			Retorna qual opção do menu foi selecionada.
 	 *
 	 * @return int
 	 */
