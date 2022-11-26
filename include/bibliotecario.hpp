@@ -9,7 +9,6 @@
 #include <list>
 
 class Bibliotecario : public Usuario {
-  private:
   public:
 	Bibliotecario();
 	Bibliotecario(Usuario *usuario);

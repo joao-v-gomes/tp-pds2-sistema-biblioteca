@@ -20,7 +20,11 @@ int menuLogin(Usuario *user) {
 
 	std::cin >> senha;
 
-	std::cout << "Validando login... Aguarde..." << std::endl;
+	std::cout << "\n\n";
+
+	std::cout << "Validando login... Aguarde...";
+
+	std::cout << "\n\n";
 
 	tipoLogin = verificarLogin(user, usuario, senha);
 
@@ -32,7 +36,7 @@ int menuLogin(Usuario *user) {
 }
 
 int verificarLogin(Usuario *user, std::string usuario, std::string senha) {
-	int tipoLogin;
+	int statusLogin;
 
 	// verificar no banco o login e senha
 	// retornar o tipo de usuario para saber em qual menu entrar
@@ -76,35 +80,38 @@ int verificarLogin(Usuario *user, std::string usuario, std::string senha) {
 				user->setNome(nomeBD);
 				user->setEmail(emailBD);
 				user->setTelefone(telefoneBD);
+				user->setTipoUsuario(tipoDeUsuario);
+
+				statusLogin = LOGIN_FEITO;
 
 				// std::cout << user->getNome() << std::endl;
 				// std::cout << user->getEmail() << std::endl;
 				// std::cout << user->getTelefone() << std::endl;
 
-				if (tipoDeUsuario == 1) {
-					tipoLogin = LOGIN_CLIENTE;
+				// if (tipoDeUsuario == 1) {
+				// 	tipoLogin = LOGIN_CLIENTE;
 
-					// user = new Usuario(nomeBD, emailBD, telefoneBD);
+				// 	// user = new Usuario(nomeBD, emailBD, telefoneBD);
 
-				} else {
-					tipoLogin = LOGIN_BIBLIOTECARIO;
+				// } else {
+				// 	tipoLogin = LOGIN_BIBLIOTECARIO;
 
-					// user = new Usuario(nomeBD, emailBD, telefoneBD);
-				}
+				// 	// user = new Usuario(nomeBD, emailBD, telefoneBD);
+				// }
 			} else {
 				std::cout << "Senha incorreta!" << std::endl;
-				tipoLogin = LOGIN_ERRO;
+				statusLogin = LOGIN_ERRO;
 			}
 		} else {
 			std::cout << "Login incorreto!" << std::endl;
-			tipoLogin = LOGIN_ERRO;
+			statusLogin = LOGIN_ERRO;
 		}
 
 	} else {
 		std::cout << "Erro no banco!" << std::endl;
 	};
 
-	return tipoLogin;
+	return statusLogin;
 }
 
 // int menuCliente() {

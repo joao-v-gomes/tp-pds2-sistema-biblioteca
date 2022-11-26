@@ -45,6 +45,19 @@ int main() {
 
 				break;
 
+			case LOGIN_FEITO:
+
+				std::cout << "Olá " << user.getNome() << "!" << std::endl;
+				std::cout << "O que deseja fazer hoje?" << std::endl;
+				std::cout << std::endl;
+
+				if (user.getTipoUsuario() == LOGIN_BIBLIOTECARIO) {
+					opcao = MENU_BIBLIOTECARIO;
+				} else {
+					opcao = MENU_CLIENTE;
+				}
+				break;
+
 			case MENU_CLIENTE: {
 				int opcao_cliente;
 
@@ -99,7 +112,7 @@ int main() {
 				// opcao_bibliotecario = menuBibliotecario();
 				opcao_bibliotecario = b->exibeMenu();
 
-				std::cout << "Opcao: " << opcao_bibliotecario << std::endl;
+				// std::cout << "Opcao: " << opcao_bibliotecario << std::endl;
 
 				switch (opcao_bibliotecario) {
 					case PESQUISAR_LIVRO_NOME_BIBLIOTECARIO:

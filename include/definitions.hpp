@@ -8,6 +8,7 @@
 #define LOGIN_BIBLIOTECARIO 0
 #define LOGIN_CLIENTE		1
 #define LOGIN_ERRO			2
+#define LOGIN_FEITO			5
 
 #define MENU_CLIENTE	   2
 #define MENU_BIBLIOTECARIO 3
