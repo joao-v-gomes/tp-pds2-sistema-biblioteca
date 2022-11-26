@@ -77,38 +77,49 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classPrateleira.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPrateleira.html">Prateleira</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> _idPrateleira;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::string _assunto;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> _estanteId;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::list&lt;Livro&gt; livrosDaPrateleira;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classPrateleira.html#a240dda527279c92eb8e85b10c67097df">Prateleira</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classPrateleira.html#a240dda527279c92eb8e85b10c67097df">Prateleira</a>(std::string assunto, <span class="keywordtype">int</span> estanteID);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPrateleira.html#a619b48c83c46056e7099861b509396c0">getIdPrateleira</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string <a class="code" href="classPrateleira.html#af4286a3b40dc645ba4e3b3812cc18192">getAssuntoPrateleira</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPrateleira.html#aac64054386bc84b5565a63ae0b222dd8">getEstanteDaPrateleira</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classPrateleira.html#a6ff512094c39f5f989852b95770016f1">   21</a></span>&#160;    std::list&lt;Livro&gt; <a class="code" href="classPrateleira.html#a6ff512094c39f5f989852b95770016f1">getLivroPrateleira</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#a866c24e42677826abe3c4f60938b553c">setIdPrateleira</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classPrateleira.html#ab68d1501b5151183c870b425b335341c">   24</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#ab68d1501b5151183c870b425b335341c">setAssuntoPrateleira</a>(std::string _assunto);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#ae2029a6b0603a852df36b84603035427">setEstanteDaPrateleira</a>(<span class="keywordtype">int</span> idEstante);</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classPrateleira.html#a286bf489f9c874401a22ab46a8d98a34">   26</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#a286bf489f9c874401a22ab46a8d98a34">setListaDeLivros</a>(std::list&lt;Livro&gt; listaDeLivros);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassPrateleira_html"><div class="ttname"><a href="classPrateleira.html">Prateleira</a></div><div class="ttdef"><b>Definition:</b> prateleira.hpp:8</div></div>
-<div class="ttc" id="aclassPrateleira_html_a240dda527279c92eb8e85b10c67097df"><div class="ttname"><a href="classPrateleira.html#a240dda527279c92eb8e85b10c67097df">Prateleira::Prateleira</a></div><div class="ttdeci">Prateleira()</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:3</div></div>
-<div class="ttc" id="aclassPrateleira_html_a286bf489f9c874401a22ab46a8d98a34"><div class="ttname"><a href="classPrateleira.html#a286bf489f9c874401a22ab46a8d98a34">Prateleira::setListaDeLivros</a></div><div class="ttdeci">void setListaDeLivros(std::list&lt; Livro &gt; listaDeLivros)</div></div>
-<div class="ttc" id="aclassPrateleira_html_a619b48c83c46056e7099861b509396c0"><div class="ttname"><a href="classPrateleira.html#a619b48c83c46056e7099861b509396c0">Prateleira::getIdPrateleira</a></div><div class="ttdeci">int getIdPrateleira()</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:15</div></div>
-<div class="ttc" id="aclassPrateleira_html_a6ff512094c39f5f989852b95770016f1"><div class="ttname"><a href="classPrateleira.html#a6ff512094c39f5f989852b95770016f1">Prateleira::getLivroPrateleira</a></div><div class="ttdeci">std::list&lt; Livro &gt; getLivroPrateleira()</div></div>
-<div class="ttc" id="aclassPrateleira_html_a866c24e42677826abe3c4f60938b553c"><div class="ttname"><a href="classPrateleira.html#a866c24e42677826abe3c4f60938b553c">Prateleira::setIdPrateleira</a></div><div class="ttdeci">void setIdPrateleira(int id)</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:23</div></div>
-<div class="ttc" id="aclassPrateleira_html_aac64054386bc84b5565a63ae0b222dd8"><div class="ttname"><a href="classPrateleira.html#aac64054386bc84b5565a63ae0b222dd8">Prateleira::getEstanteDaPrateleira</a></div><div class="ttdeci">int getEstanteDaPrateleira()</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:19</div></div>
-<div class="ttc" id="aclassPrateleira_html_ab68d1501b5151183c870b425b335341c"><div class="ttname"><a href="classPrateleira.html#ab68d1501b5151183c870b425b335341c">Prateleira::setAssuntoPrateleira</a></div><div class="ttdeci">void setAssuntoPrateleira(std::string _assunto)</div></div>
-<div class="ttc" id="aclassPrateleira_html_ae2029a6b0603a852df36b84603035427"><div class="ttname"><a href="classPrateleira.html#ae2029a6b0603a852df36b84603035427">Prateleira::setEstanteDaPrateleira</a></div><div class="ttdeci">void setEstanteDaPrateleira(int idEstante)</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:27</div></div>
-<div class="ttc" id="aclassPrateleira_html_af4286a3b40dc645ba4e3b3812cc18192"><div class="ttname"><a href="classPrateleira.html#af4286a3b40dc645ba4e3b3812cc18192">Prateleira::getAssuntoPrateleira</a></div><div class="ttdeci">std::string getAssuntoPrateleira()</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:11</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classPrateleira.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPrateleira.html">Prateleira</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> _idPrateleira;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::string _assunto;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> _estanteId;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::list&lt;Livro&gt; livrosDaPrateleira;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classPrateleira.html#a240dda527279c92eb8e85b10c67097df">Prateleira</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classPrateleira.html#a240dda527279c92eb8e85b10c67097df">Prateleira</a>(std::string assunto, <span class="keywordtype">int</span> estanteID);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPrateleira.html#a619b48c83c46056e7099861b509396c0">getIdPrateleira</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string <a class="code" href="classPrateleira.html#af4286a3b40dc645ba4e3b3812cc18192">getAssuntoPrateleira</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPrateleira.html#aac64054386bc84b5565a63ae0b222dd8">getEstanteDaPrateleira</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classPrateleira.html#a6ff512094c39f5f989852b95770016f1">   79</a></span>&#160;    std::list&lt;Livro&gt; <a class="code" href="classPrateleira.html#a6ff512094c39f5f989852b95770016f1">getLivroPrateleira</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#a866c24e42677826abe3c4f60938b553c">setIdPrateleira</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classPrateleira.html#ab68d1501b5151183c870b425b335341c">   93</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#ab68d1501b5151183c870b425b335341c">setAssuntoPrateleira</a>(std::string _assunto);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#ae2029a6b0603a852df36b84603035427">setEstanteDaPrateleira</a>(<span class="keywordtype">int</span> idEstante);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classPrateleira.html#a286bf489f9c874401a22ab46a8d98a34">  107</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPrateleira.html#a286bf489f9c874401a22ab46a8d98a34">setListaDeLivros</a>(std::list&lt;Livro&gt; listaDeLivros);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassPrateleira_html"><div class="ttname"><a href="classPrateleira.html">Prateleira</a></div><div class="ttdef"><b>Definition:</b> prateleira.hpp:12</div></div>
+<div class="ttc" id="aclassPrateleira_html_a240dda527279c92eb8e85b10c67097df"><div class="ttname"><a href="classPrateleira.html#a240dda527279c92eb8e85b10c67097df">Prateleira::Prateleira</a></div><div class="ttdeci">Prateleira()</div><div class="ttdoc">Construct a new Prateleira object.</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:3</div></div>
+<div class="ttc" id="aclassPrateleira_html_a286bf489f9c874401a22ab46a8d98a34"><div class="ttname"><a href="classPrateleira.html#a286bf489f9c874401a22ab46a8d98a34">Prateleira::setListaDeLivros</a></div><div class="ttdeci">void setListaDeLivros(std::list&lt; Livro &gt; listaDeLivros)</div><div class="ttdoc">Set the Lista De Livros object.</div></div>
+<div class="ttc" id="aclassPrateleira_html_a619b48c83c46056e7099861b509396c0"><div class="ttname"><a href="classPrateleira.html#a619b48c83c46056e7099861b509396c0">Prateleira::getIdPrateleira</a></div><div class="ttdeci">int getIdPrateleira()</div><div class="ttdoc">Get the Id Prateleira object.</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:15</div></div>
+<div class="ttc" id="aclassPrateleira_html_a6ff512094c39f5f989852b95770016f1"><div class="ttname"><a href="classPrateleira.html#a6ff512094c39f5f989852b95770016f1">Prateleira::getLivroPrateleira</a></div><div class="ttdeci">std::list&lt; Livro &gt; getLivroPrateleira()</div><div class="ttdoc">Get the Livro Prateleira object.</div></div>
+<div class="ttc" id="aclassPrateleira_html_a866c24e42677826abe3c4f60938b553c"><div class="ttname"><a href="classPrateleira.html#a866c24e42677826abe3c4f60938b553c">Prateleira::setIdPrateleira</a></div><div class="ttdeci">void setIdPrateleira(int id)</div><div class="ttdoc">Set the Id Prateleira object.</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:23</div></div>
+<div class="ttc" id="aclassPrateleira_html_aac64054386bc84b5565a63ae0b222dd8"><div class="ttname"><a href="classPrateleira.html#aac64054386bc84b5565a63ae0b222dd8">Prateleira::getEstanteDaPrateleira</a></div><div class="ttdeci">int getEstanteDaPrateleira()</div><div class="ttdoc">Get the Estante Da Prateleira object.</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:19</div></div>
+<div class="ttc" id="aclassPrateleira_html_ab68d1501b5151183c870b425b335341c"><div class="ttname"><a href="classPrateleira.html#ab68d1501b5151183c870b425b335341c">Prateleira::setAssuntoPrateleira</a></div><div class="ttdeci">void setAssuntoPrateleira(std::string _assunto)</div><div class="ttdoc">Set the Assunto Prateleira object.</div></div>
+<div class="ttc" id="aclassPrateleira_html_ae2029a6b0603a852df36b84603035427"><div class="ttname"><a href="classPrateleira.html#ae2029a6b0603a852df36b84603035427">Prateleira::setEstanteDaPrateleira</a></div><div class="ttdeci">void setEstanteDaPrateleira(int idEstante)</div><div class="ttdoc">Set the Estante Da Prateleira object.</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:27</div></div>
+<div class="ttc" id="aclassPrateleira_html_af4286a3b40dc645ba4e3b3812cc18192"><div class="ttname"><a href="classPrateleira.html#af4286a3b40dc645ba4e3b3812cc18192">Prateleira::getAssuntoPrateleira</a></div><div class="ttdeci">std::string getAssuntoPrateleira()</div><div class="ttdoc">Get the Assunto Prateleira object.</div><div class="ttdef"><b>Definition:</b> prateleira.cpp:11</div></div>
 <div class="ttc" id="alivro_8hpp_html"><div class="ttname"><a href="livro_8hpp.html">livro.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

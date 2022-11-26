@@ -19,20 +19,20 @@
 class Bibliotecario : public Usuario {
   public:
 	/**
-	 * @brief Construct a new Bibliotecario object
+	 * @brief Constrói um novo objeto Bibliotecario sem inicializar nenhum atributo
 	 *
 	 */
 	Bibliotecario();
 
 	/**
-	 * @brief Construct a new Bibliotecario object
+	 * @brief Constrói um novo objeto Bibliotecario recebendo um objeto Usuario como parametro
 	 *
 	 * @param usuario
 	 */
 	Bibliotecario(Usuario *usuario);
 
 	/**
-	 * @brief Construct a new Bibliotecario object
+	 * @brief Constrói um novo objeto Bibliotecario recebendo o id, tipoDeUsuario, nome, senha, email e telefone.
 	 *
 	 * @param id
 	 * @param tipoDeUsuario
@@ -44,7 +44,7 @@ class Bibliotecario : public Usuario {
 	Bibliotecario(int id, bool tipoDeUsuario, std::string nome, std::string senha, std::string email, std::string telefone);
 
 	/**
-	 * @brief Construct a new Bibliotecario object
+	 * @brief Constrói um novo objeto Bibliotecario recebendo o nome, senha, email e telefone.
 	 *
 	 * @param nome
 	 * @param senha
@@ -54,7 +54,7 @@ class Bibliotecario : public Usuario {
 	Bibliotecario(std::string nome, std::string senha, std::string email, std::string telefone);
 
 	/**
-	 * @brief Construct a new Bibliotecario object
+	 * @brief Constrói um novo objeto Bibliotecario recebendo o nome, email e telefone.
 	 *
 	 * @param nome
 	 * @param email
@@ -65,7 +65,7 @@ class Bibliotecario : public Usuario {
 	///
 
 	/**
-	 * @brief
+	 * @brief Realiza as ações necessárias para emprestar um livro para um Cliente.
 	 *
 	 * @param cliente
 	 * @param livro
@@ -73,41 +73,42 @@ class Bibliotecario : public Usuario {
 	void emprestarLivro(Cliente *cliente, Livro *livro);
 
 	/**
-	 * @brief
+	 * @brief Cadastra um novo livro no banco de dados. Recebe como parâmetro o Bibliotecário que fará o cadastro.
 	 *
 	 * @param b
 	 */
 	void cadastrarLivro(Bibliotecario *b);
 
 	/**
-	 * @brief
+	 * @brief Cadastra uma nova prateleira no banco de dados. Recebe como parâmetro o Bibliotecário que fará o cadastro.
 	 *
 	 * @param b
 	 */
 	void cadastrarPrateleira(Bibliotecario *b);
 
 	/**
-	 * @brief
+	 * @brief Cadastra uma nova estante no banco de dados.
 	 *
 	 */
 	void cadastrarEstante();
 
 	/**
-	 * @brief
+	 * @brief Cadastra um novo cliente no banco de dados.
 	 *
 	 */
 	void cadastrarCliente();
 
 	/**
-	 * @brief
-	 *
+	 * @brief Realiza a pesquisa no banco de dados sobre as reservas de um determinado livro e retorna a lista uma lista de clientes
+	 *@details A lista de reserva funciona como uma fila, o primeiro cliente é, de fato, com quem está o livro.
+				O segundo cliente pegará o livro assim que o primeiro devolver o livro para a biblioteca.
 	 * @param livro
 	 * @return std::list<Cliente>
 	 */
 	std::list<Cliente> pesquisarReserva(Livro livro);
 
 	/**
-	 * @brief
+	 * @brief Busca, no banco de dados, o ID da estante que possui a categoria recebida como parâmetro.
 	 *
 	 * @param categoria
 	 * @return int
@@ -115,7 +116,7 @@ class Bibliotecario : public Usuario {
 	int buscaEstanteIDnobanco(std::string categoria);
 
 	/**
-	 * @brief
+	 * @brief Busca, no banco de dados, um objeto Prateleira que possui o assunto recebida como parâmetro.
 	 *
 	 * @param assunto
 	 * @return Prateleira
@@ -123,14 +124,15 @@ class Bibliotecario : public Usuario {
 	Prateleira buscaPrateleiranobanco(std::string assunto);
 
 	/**
-	 * @brief
+	 * @brief Reescrita do método exibeMenu() do Usuario para exibir o menu do Bibliotecário.
+	 * 			Retorna qual opção do menu foi selecionada.
 	 *
 	 * @return int
 	 */
 	virtual int exibeMenu() const override;
 
 	/**
-	 * @brief Destroy the Bibliotecario object
+	 * @brief Destrói o objeto Bibliotecário
 	 *
 	 */
 	virtual ~Bibliotecario() = default;
