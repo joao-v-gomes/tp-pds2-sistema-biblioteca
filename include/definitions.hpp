@@ -4,7 +4,7 @@
 #include <pqxx/pqxx>
 
 /**
- * @brief
+ * @brief Arquivo com os #defines utilizados no código
  *
  */
 #define SAIR				-1
