@@ -3,6 +3,10 @@
 
 #include <pqxx/pqxx>
 
+/**
+ * @brief
+ *
+ */
 #define SAIR				-1
 #define INIT				4
 #define LOGIN_BIBLIOTECARIO 0
