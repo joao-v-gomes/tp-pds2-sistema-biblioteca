@@ -16,7 +16,7 @@ std::string Estante::getCategoria() {
 }
 
 std::list<Prateleira> getPrateleiras(){
-	return ;
+	return _prateleiras;
 }
 
 void setIdEstante(int id){
@@ -28,5 +28,5 @@ void setCategoria(std::string categoria){
 }
 
 void setPrateleiras(std::list<Prateleira> listaPrateleiras){
-	
+	_prateleiras = listaPrateleiras;
 }
