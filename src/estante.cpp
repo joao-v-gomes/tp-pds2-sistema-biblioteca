@@ -7,14 +7,26 @@ Estante::Estante(std::string categoria) {
 	_categoria = categoria;
 }
 
-std::string Estante::getCategoria() {
-	return _categoria;
-}
-
 int Estante::getIdEstante(){
 	return _idEstante;
 }
 
-std::string Estante::getCategoria(){
+std::string Estante::getCategoria() {
 	return _categoria;
+}
+
+std::list<Prateleira> getPrateleiras(){
+	return ;
+}
+
+void setIdEstante(int id){
+	_idEstante = id;
+}
+
+void setCategoria(std::string categoria){
+	_categoria = categoria;
+}
+
+void setPrateleiras(std::list<Prateleira> listaPrateleiras){
+	
 }
