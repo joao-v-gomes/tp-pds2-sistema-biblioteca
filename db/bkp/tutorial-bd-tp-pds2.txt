@@ -60,40 +60,28 @@ sudo -u postgres psql
 
 alter user postgres password '123123';
 
+create database biblioteca;
+
+------------------------------------------------------------
+
+Para testar o banco, compile o arquivo "testar-banco.cpp" com "g++ testar-banco.cpp -lpqxx -lpq -o testar-banco" e execute com ./
+
+Se deu tudo certo, a msg "Opened database successfully" aparecerá.
+
+------------------------------------------------------------
+
+Para criar as tabelas do banco, compile o arquivo "criar-tabela.cpp" com "g++ criar-tabela.cpp -lpqxx -lpq -o criar-tabela" e execute com
+
+./criar-tabela NOMEDATABELA. Ex: ./criar-tabela usuarios ou ./criar-tabela livros
+
+------------------------------------------------------------
+
+Após criar as tabelas, execute 
+
+sudo -u postgres psql
+
+\c biblioteca;
+
 INSERT INTO usuarios (NOME,SENHA,TIPO_USUARIO,EMAIL,TELEFONE) VALUES ('admin','123',False,'admin@admin','33333333');
 
-Quando rodar o código, logar com o usuario admin e senha 123.
-
-------------------------------------------------------------
-
-criar um arquivo main.cpp com o codigo abaixo para testar a conexao com o banco
-
-#include <iostream>
-#include <pqxx/pqxx>
-
-using namespace std;
-using namespace pqxx;
-
-int main(int argc, char *argv[]) {
-  try {
-    connection C("dbname = postgres user = postgres password = 123123 \
-      hostaddr = 127.0.0.1 port = 5432");
-    if (C.is_open()) {
-      cout << "Opened database successfully: " << C.dbname() << endl;
-    } else {
-      cout << "Can't open database" << endl;
-      return 1;
-    }
-  } catch (const std::exception &e) {
-    cerr << e.what() << std::endl;
-    return 1;
-  }
-}
-
-------------------------------------------------------------
-
-g++ main.cpp -lpqxx -lpq -o main
-
-./main
-
-------------------------------------------------------------
+Para cadastrar o bibliotecario 'admin' no sistema e conseguir logar.
