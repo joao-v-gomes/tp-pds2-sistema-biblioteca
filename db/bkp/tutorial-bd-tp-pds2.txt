@@ -74,6 +74,8 @@ Para criar as tabelas do banco, compile o arquivo "criar-tabela.cpp" com "g++ cr
 
 ./criar-tabela NOMEDATABELA. Ex: ./criar-tabela usuarios ou ./criar-tabela livros
 
+CRIE TODAS AS TABELAS DO BANCO. os nomes estão dentro do criar-tabela.cpp.
+
 ------------------------------------------------------------
 
 Após criar as tabelas, execute 
