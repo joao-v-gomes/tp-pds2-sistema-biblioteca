@@ -8,7 +8,9 @@
 #include <string>
 
 /**
- * @brief
+ * @brief Inicializa o login no sistema
+ * @details Recebe um ponteiro para um Usuario que, após o login, é inicializado como Cliente ou Bibliotecário.
+ *          Retorna se o login foi de um Cliente ou Usuário.
  *
  * @param user
  * @return int
@@ -23,7 +25,9 @@ int menuLogin(Usuario *user);
 // void menuCadastraPrateleira(Usuario *user);
 
 /**
- * @brief
+ * @brief Verifica as informações de login no banco de dados e
+ *          inicializa as informações do usuário que fez login.
+ *          Retorna de o login foi bem sucedido ou não.
  *
  * @param user
  * @param usuario

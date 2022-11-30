@@ -14,7 +14,7 @@ sudo apt install make g++ libpq-dev
 ------------------------------------------------------------
 
 git clone https://github.com/jtv/libpqxx.git
-./configure
+./configure (se der o pau do c++ 17, use "./configure CXXFLAGS=-std=c++17")
 make -j4
 sudo make install
 

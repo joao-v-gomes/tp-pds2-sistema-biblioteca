@@ -6,56 +6,58 @@
 #include <string>
 
 /**
- * @brief
- *@details description
+ * @brief Armazena as caracteristicas do Usuário
+ *@details Um Usuário pode ser do tipo Cliente ou Bibliotecário.
+			As funções de alimentação do sistema são exclusivas do Bibliotecário,
+			mas funções de pesquisa são compartilhadas.
  */
 class Usuario {
   protected:
 	/**
-	 * @brief
+	 * @brief Atributo com o id do Usuário
 	 *
 	 */
 	int _id;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o tipo de usuario
 	 *
 	 */
 	bool _tipoDeUsuario;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o nome do usuário
 	 *
 	 */
 	std::string _nome;
 
 	/**
-	 * @brief
+	 * @brief Atributo com a senha do usuario
 	 *
 	 */
 	std::string _senha;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o email do Usuário
 	 *
 	 */
 	std::string _email;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o telefone do Usuário
 	 *
 	 */
 	std::string _telefone;
 
   public:
 	/**
-	 * @brief Construct a new Usuario object
+	 * @brief Constrói um novo objeto Usuario sem inicializar nenhum atributo
 	 *
 	 */
 	Usuario();
 
 	/**
-	 * @brief Construct a new Usuario object
+	 * @brief Constrói um novo objeto Usuario recebendo como parâmetro o nome, senha, email e telefone
 	 *
 	 * @param nome
 	 * @param email
@@ -64,7 +66,7 @@ class Usuario {
 	Usuario(std::string nome, std::string email, std::string telefone);
 
 	/**
-	 * @brief
+	 * @brief Pesquisa um livro pelo nome e retorna um objeto Livro
 	 *
 	 * @param nomeLivroPesquisado
 	 * @return Livro
@@ -72,7 +74,7 @@ class Usuario {
 	Livro pesquisarLivroPorNome(std::string nomeLivroPesquisado);
 
 	/**
-	 * @brief
+	 * @brief Pesquisa um livro por autor e retorna uma lista de Livros
 	 *
 	 * @param nomeAutorPesquisado
 	 * @return std::list<Livro>
@@ -80,7 +82,7 @@ class Usuario {
 	std::list<Livro> pesquisarLivroPorAutor(std::string nomeAutorPesquisado);
 
 	/**
-	 * @brief
+	 * @brief Pesquisa um livro por assunto e retorna uma lista de Livros
 	 *
 	 * @param assuntoPesquisado
 	 * @return std::list<Livro>
@@ -92,56 +94,58 @@ class Usuario {
 	// virtual std::list<Cliente> pesquisarReserva(Livro livroPesquisado) = 0;
 
 	/**
-	 * @brief Set the Id object
+	 * @brief Atualiza o id do Usuario
 	 *
 	 * @param id
 	 */
 	void setId(int id);
 
 	/**
-	 * @brief Set the Tipo Usuario object
+	 * @brief Atualiza o tipo de usuario
 	 *
 	 * @param tipoUsuario
 	 */
 	void setTipoUsuario(bool tipoUsuario);
 
 	/**
-	 * @brief Set the Nome object
+	 * @brief Atualiza o nome do usuario
 	 *
 	 * @param nome
 	 */
 	void setNome(std::string nome);
 
 	/**
-	 * @brief Set the Senha object
+	 * @brief Atualiza a senha do usuario
 	 *
 	 * @param senha
 	 */
 	void setSenha(std::string senha);
 
 	/**
-	 * @brief Set the Email object
+	 * @brief Atualiza o email do usuario
 	 *
 	 * @param email
 	 */
 	void setEmail(std::string email);
 
 	/**
-	 * @brief Set the Telefone object
+	 * @brief Atualiza o telefone do usuario
 	 *
 	 * @param telefone
 	 */
 	void setTelefone(std::string telefone);
 
 	/**
-	 * @brief Get the Id object
+	 * @brief Retorna o ID do usuario
 	 *
 	 * @return int
 	 */
 	int getId();
 
 	/**
-	 * @brief Get the Tipo Usuario object
+	 * @brief Retorna o tipo de usuario
+	 * 			True -> Cliente
+	 * 			False -> Bibliotecario
 	 *
 	 * @return true
 	 * @return false
@@ -149,35 +153,36 @@ class Usuario {
 	bool getTipoUsuario();
 
 	/**
-	 * @brief Get the Nome object
+	 * @brief Retorna o nome do usuario
 	 *
 	 * @return std::string
 	 */
 	std::string getNome();
 
 	/**
-	 * @brief Get the Senha object
+	 * @brief Retorna a senha do usuario
 	 *
 	 * @return std::string
 	 */
 	std::string getSenha();
 
 	/**
-	 * @brief Get the Email object
+	 * @brief Retorna o email do usuario
 	 *
 	 * @return std::string
 	 */
 	std::string getEmail();
 
 	/**
-	 * @brief Get the Telefone object
+	 * @brief Retorna o telefone do usuario
 	 *
 	 * @return std::string
 	 */
 	std::string getTelefone();
 
 	/**
-	 * @brief
+	 * @brief Exibe o menu do usuario.
+	 * 			Cada tipo de Usuário deve reescrever o seu próprio exibeMenu específico.
 	 *
 	 * @return int
 	 */
