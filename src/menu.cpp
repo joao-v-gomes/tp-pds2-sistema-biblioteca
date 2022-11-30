@@ -12,8 +12,6 @@ int menuLogin(Usuario *user) {
 
 	std::cout << "\tUsuário: ";
 
-	std::cin >> usuario;
-	
 	if(usuario){
 		throw std::exception("Usuário inválido");
 	}
