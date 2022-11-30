@@ -8,69 +8,72 @@
 // class Cliente;
 
 /**
- * @brief
- *@details
+ * @brief Armazena as caracteristicas do Livro
+ *@details O Livro é o objeto que será manipulado pelos Usuários.
+			Ele possui alguns atrinutos para a identificação do livro e
+			outros para a localização do livro na biblioteca.
  */
 class Livro {
   private:
 	/**
-	 * @brief
+	 * @brief Atributo para identificar o livro no banco de dados
 	 *
 	 */
 	int _idLivro;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o nome do livro
 	 *
 	 */
 	std::string _nome;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o autor do livro
 	 *
 	 */
 	std::string _autor;
 
 	/**
-	 * @brief
+	 * @brief Atributo com a edicao do livro
 	 *
 	 */
 	std::string _edicao;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o assunto do livro
 	 *
 	 */
 	std::string _assunto;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o número da estante em que o livro está alocado
 	 *
 	 */
 	int _idEstante;
 
 	/**
-	 * @brief
+	 * @brief Atributo com o número da prateleira em que o livro está alocado
 	 *
 	 */
 	int _idPrateleira;
 
 	/**
-	 * @brief
+	 * @brief Atributo com a quantidade de livros em estoque
 	 *
 	 */
 	int _quantidade;
+
 	// std::vector<Cliente> _reservas;
 
   public:
 	/**
-	 * @brief Construct a new Livro object
+	 * @brief Constrói um novo objeto Livro sem inicializar nenhum atributo
 	 *
 	 */
 	Livro();
 
 	/**
-	 * @brief Construct a new Livro object
+	 * @brief Constrói um novo objeto Livro recebendo como parâmetro o nome, autor, edicao e assunto
 	 *
 	 * @param nome
 	 * @param autor
@@ -80,7 +83,7 @@ class Livro {
 	Livro(std::string nome, std::string autor, std::string edicao, std::string assunto);
 
 	/**
-	 * @brief Construct a new Livro object
+	 * @brief Constrói um novo objeto Livro recebendo como parâmetro o nome, autor, edicao, assunto, qtde, idEstante e idPrateleira
 	 *
 	 * @param nome
 	 * @param autor
@@ -93,113 +96,114 @@ class Livro {
 	Livro(std::string nome, std::string autor, std::string edicao, std::string assunto, int qtde, int idEstante, int idPrateleira);
 
 	/**
-	 * @brief Get the Id Livro object
+	 * @brief Retorna a ID do livro
 	 *
 	 * @return int
 	 */
 	int getIdLivro();
 
 	/**
-	 * @brief Get the Nome Livro object
+	 * @brief Retorna o nome do livro
 	 *
 	 * @return std::string
 	 */
 	std::string getNomeLivro();
 
 	/**
-	 * @brief Get the Autor Livro object
+	 * @brief Retorna o autor do livro
 	 *
 	 * @return std::string
 	 */
 	std::string getAutorLivro();
 
 	/**
-	 * @brief Get the Assunto Livro object
+	 * @brief Retorna o assunto do livro
 	 *
 	 * @return std::string
 	 */
 	std::string getAssuntoLivro();
 
 	/**
-	 * @brief Get the Edicao Livro object
+	 * @brief Retorna a edição do livro
 	 *
 	 * @return std::string
 	 */
 	std::string getEdicaoLivro();
 
 	/**
-	 * @brief Get the Prateleira Livro object
+	 * @brief Retorna o ID da prateleira do livro
 	 *
-	 * @return * int
+	 * @return int
 	 */
 	int getPrateleiraLivro();
 
 	/**
-	 * @brief Get the Estante Livro object
+	 * @brief Retorna o ID da estante do livro
 	 *
 	 * @return int
 	 */
 	int getEstanteLivro();
 
 	/**
-	 * @brief Get the Qtde Livro object
+	 * @brief Retorna a quantidade daquele livro
 	 *
 	 * @return int
 	 */
 	int getQtdeLivro();
+
 	// std::vector<Cliente> getReservasLivro();
 
 	/**
-	 * @brief Set the Id Livro object
+	 * @brief Atualiza o ID do livro
 	 *
 	 * @param id
 	 */
 	void setIdLivro(int id);
 
 	/**
-	 * @brief Set the Nome Livro object
+	 * @brief Atualiza o nome do livro
 	 *
 	 * @param nome
 	 */
 	void setNomeLivro(std::string nome);
 
 	/**
-	 * @brief Set the Autor Livro object
+	 * @brief Atualiza o autor do livro
 	 *
 	 * @param autor
 	 */
 	void setAutorLivro(std::string autor);
 
 	/**
-	 * @brief Set the Edicao Livro object
+	 * @brief Atualiza a edição do livro
 	 *
 	 * @param edicao
 	 */
 	void setEdicaoLivro(int edicao);
 
 	/**
-	 * @brief Set the Assunto Livro object
+	 * @brief Atualiza o assunto do livro
 	 *
 	 * @param assunto
 	 */
 	void setAssuntoLivro(std::string assunto);
 
 	/**
-	 * @brief Set the Id Estante Livro object
+	 * @brief Atualiza o ID da estante do livro
 	 *
 	 * @param idEstante
 	 */
 	void setIdEstanteLivro(int idEstante);
 
 	/**
-	 * @brief Set the Id Prateleira Livro object
+	 * @brief Atualiza o ID da prateleira do livro
 	 *
 	 * @param idPrateleira
 	 */
 	void setIdPrateleiraLivro(int idPrateleira);
 
 	/**
-	 * @brief Set the Qtde Livro object
+	 * @brief Atualiza a quantidade de livros
 	 *
 	 * @param quantidade
 	 */
