@@ -13,12 +13,20 @@ int menuLogin(Usuario *user) {
 	std::cout << "\tUsuário: ";
 
 	std::cin >> usuario;
+	
+	if(usuario){
+		throw std::exception("Usuário inválido");
+	}
 
 	// std::string textoSenha = "\tSenha: ";
 
 	std::cout << "\tSenha: ";
 
 	std::cin >> senha;
+
+	if(senha){
+		throw std::exception("Senha inválida");
+	}
 
 	std::cout << "\n\n";
 
