@@ -8,7 +8,6 @@ int main() {
 	// teste
 
 	int opcao = INIT;
-	bool erro = true;
 
 	Usuario user;
 
@@ -18,14 +17,7 @@ int main() {
 			case INIT:
 				// colocar o try-throw-catch aqui pra pegar alguma merda que o usuario digitar
 				// caso der merda, fazer a opcao voltar pro INIT e executar o login novamente
-				do{
-					try{
 						opcao = menuLogin(&user);
-						erro = false;
-					}catch(std::exception &e){
-						std::cout<<e.what()<<std::endl;
-					}
-				}while(erro);
 				// std::cout << user.getNome() << std::endl;
 				// std::cout << user.getEmail() << std::endl;
 				// std::cout << user.getTelefone() << std::endl;
