@@ -15,18 +15,18 @@ std::string Estante::getCategoria() {
 	return _categoria;
 }
 
-std::list<Prateleira> getPrateleiras(){
-	return _prateleiras;
-}
+// std::list<Prateleira> getPrateleiras(){
+// 	return _prateleiras;
+// }
 
-void setIdEstante(int id){
-	_idEstante = id;
-}
+// void setIdEstante(int id){
+// 	_idEstante = id;
+// }
 
-void setCategoria(std::string categoria){
-	_categoria = categoria;
-}
+// void setCategoria(std::string categoria){
+// 	_categoria = categoria;
+// }
 
-void setPrateleiras(std::list<Prateleira> listaPrateleiras){
-	_prateleiras = listaPrateleiras;
-}
+// void setPrateleiras(std::list<Prateleira> listaPrateleiras){
+// 	_prateleiras = listaPrateleiras;
+// }

@@ -5,7 +5,7 @@ int menuLogin(Usuario *user) {
 	std::cout << "\t-- Faça login para acessar o sistema --\n\n";
 
 	int tipoLogin;
-	// bool h = false;
+	
 	std::string usuario, senha;
 
 	// std::string textoUsuario = "\tUsuário: ";
@@ -18,7 +18,6 @@ int menuLogin(Usuario *user) {
 	std::cout << "\tSenha: ";
 
 	std::cin >> senha;
-//hello
 
 	std::cout << "\n\n";
 
