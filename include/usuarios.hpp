@@ -11,6 +11,37 @@
 			As funções de alimentação do sistema são exclusivas do Bibliotecário,
 			mas funções de pesquisa são compartilhadas.
  */
+
+class ExcecaoPrograma: public std::exception {
+  public:
+  virtual const char* what() const noexcept {
+    return "Erro Genérico!";
+  }
+};
+
+class UsuarioInvalido: public ExcecaoPrograma {
+  public:
+  virtual const char* what() const noexcept {
+    return "Usuario Invalido! entre com um novo usuario:";
+  }
+};
+class entradaInvalida: public ExcecaoPrograma {
+    private:
+        int num;
+        std::string mensagem;
+    public:
+    entradaInvalida(int n, ){
+            num = n;
+           
+
+            mensagem = "entrada (" + std::to_string(num) + "," +") não é válida."
+                      + " Digite uma opção valida";
+    }
+    virtual  const  char *  what () const  noexcept {
+        return  mensagem.c_str() ;
+      }
+};
+
 class Usuario {
   protected:
 	/**
