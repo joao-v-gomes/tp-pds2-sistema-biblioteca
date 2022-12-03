@@ -6,14 +6,11 @@
 #include <string>
 
 /**
- * @brief Armazena as caracteristicas do Usuário
- *@details Um Usuário pode ser do tipo Cliente ou Bibliotecário.
-			As funções de alimentação do sistema são exclusivas do Bibliotecário,
-			mas funções de pesquisa são compartilhadas.
+ * @brief Armazena as execeções que serao durante a interação com o usuario
+ *
  */
-
 class ExcecaoPrograma: public std::exception {
-  public:
+	public:
   virtual const char* what() const noexcept {
     return "Erro Genérico!";
   }
@@ -42,6 +39,12 @@ class entradaInvalida: public ExcecaoPrograma {
       }
 };
 
+/**
+ * @brief Armazena as caracteristicas do Usuário
+ *@details Um Usuário pode ser do tipo Cliente ou Bibliotecário.
+			As funções de alimentação do sistema são exclusivas do Bibliotecário,
+			mas funções de pesquisa são compartilhadas.
+ */
 class Usuario {
   protected:
 	/**
