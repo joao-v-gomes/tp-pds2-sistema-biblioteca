@@ -31,9 +31,6 @@ int menuLogin(Usuario *user) {
 int verificarLogin(Usuario *user, std::string usuario, std::string senha) {
 	int statusLogin;
 
-	// verificar no banco o login e senha
-	// retornar o tipo de usuario para saber em qual menu entrar
-	// try-catch aqui tambem
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {

@@ -54,7 +54,6 @@ void Bibliotecario::cadastrarCliente() {
 
 	Cliente novoCliente = Cliente(nome, senha, email, telefone);
 
-	// fazer um try-catch aqui
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {
@@ -76,18 +75,12 @@ void Bibliotecario::cadastrarCliente() {
 void Bibliotecario::cadastrarEstante() {
 	std::cout << "Entrou cadastro estante" << std::endl;
 
-	// Bibliotecario *b = new Bibliotecario(user);
-
 	std::string categoria;
 
 	std::cout << "Digite a categoria da estante: ";
 	std::cin >> categoria;
 
 	Estante novaEstante = Estante(categoria);
-
-	// b->cadastrarEstante(&novaEstante);
-
-	// delete b;
 
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
@@ -96,8 +89,6 @@ void Bibliotecario::cadastrarEstante() {
 		pqxx::work W(C);
 
 		std::string sql = "INSERT INTO estantes (CATEGORIA) VALUES ('" + novaEstante.getCategoria() + "');";
-
-		// std::cout << "sql: " << sql << std::endl;
 
 		W.exec(sql);
 
@@ -112,8 +103,6 @@ void Bibliotecario::cadastrarEstante() {
 void Bibliotecario::cadastrarPrateleira(Bibliotecario *b) {
 	std::cout << "Entrou cadastro prateleira" << std::endl;
 
-	// Bibliotecario *b = new Bibliotecario(user);
-
 	std::string assunto, categoria;
 	int estanteID;
 
@@ -127,10 +116,6 @@ void Bibliotecario::cadastrarPrateleira(Bibliotecario *b) {
 
 	Prateleira novaPrateleira = Prateleira(assunto, estanteID);
 
-	// b->cadastrarPrateleira(&novaPrateleira);
-
-	// delete b;
-
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {
@@ -138,8 +123,6 @@ void Bibliotecario::cadastrarPrateleira(Bibliotecario *b) {
 		pqxx::work W(C);
 
 		std::string sql = "INSERT INTO prateleiras (ASSUNTO,ESTANTE_ID) VALUES ('" + novaPrateleira.getAssuntoPrateleira() + "','" + std::to_string(novaPrateleira.getEstanteDaPrateleira()) + "');";
-
-		// std::cout << "sql: " << sql << std::endl;
 
 		W.exec(sql);
 
@@ -153,8 +136,6 @@ void Bibliotecario::cadastrarPrateleira(Bibliotecario *b) {
 
 void Bibliotecario::cadastrarLivro(Bibliotecario *b) {
 	std::cout << "Entrou cadastro livro" << std::endl;
-
-	// Bibliotecario *b = new Bibliotecario(user);
 
 	std::string nome, autor, edicao, assunto;
 	int estanteID, prateleiraID, qtde;
@@ -175,8 +156,6 @@ void Bibliotecario::cadastrarLivro(Bibliotecario *b) {
 
 	Prateleira p = b->buscaPrateleiranobanco(assunto);
 
-	// std::cout << "Id_p: " << p.getIdPrateleira() << "Id_e: " << p.getEstanteDaPrateleira() << std::endl;
-
 	estanteID = p.getEstanteDaPrateleira();
 	prateleiraID = p.getIdPrateleira();
 
@@ -189,7 +168,6 @@ void Bibliotecario::cadastrarLivro(Bibliotecario *b) {
 		pqxx::work W(C);
 
 		std::string sql = "INSERT INTO livros (NOME,AUTOR,EDICAO,ASSUNTO,QTDE_DISPONIVEL,ESTANTE_ID,PRATELEIRA_ID) VALUES ('" + novoLivro.getNomeLivro() + "','" + novoLivro.getAutorLivro() + "','" + novoLivro.getEdicaoLivro() + "','" + novoLivro.getAssuntoLivro() + "','" + std::to_string(novoLivro.getQtdeLivro()) + "','" + std::to_string(novoLivro.getEstanteLivro()) + "','" + std::to_string(novoLivro.getPrateleiraLivro()) + "');";
-		// std::cout << "sql: " << sql << std::endl;
 
 		W.exec(sql);
 
@@ -210,15 +188,12 @@ Prateleira Bibliotecario::buscaPrateleiranobanco(std::string assunto) {
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {
-		// std::cout << "Foi banco" << std::endl;
 
 		pqxx::nontransaction N(C);
 
 		std::string sql = "SELECT id,estante_id FROM prateleiras WHERE assunto ='" + assunto + "';";
 
 		pqxx::result R(N.exec(sql));
-
-		// std::cout << "Tam R: " << R.size() << std::endl;
 
 		if (R.size() != 0) {
 			prateleiraID = R[0][0].as<int>();

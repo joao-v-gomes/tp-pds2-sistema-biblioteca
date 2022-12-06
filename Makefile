@@ -3,6 +3,7 @@ FLAGS := -I include/ -Wall
 LFLAGS := -lpqxx -lpq
 BUILDDIR := build
 SRCDIR := src
+TESTDIR := testes
 TARGET := main.out
 LIBSDIR := -L/usr/local/lib -L/usr/lib/x86_64-linux-gnu/
 
@@ -33,6 +34,9 @@ prateleira:
 
 livro:
 	$(CC) $(FLAGS) -c $(SRCDIR)/livro.cpp -o $(BUILDDIR)/livro.o
+
+test: usuario.o cliente.o bibliotecario.o livro.o estante.o prateleira.o menu.o main.o
+	$(CC) $(CFLAGS) $(TESTDIR)/test.cpp $(BUILDDIR)/usuario.o -o $(BUILDDIR)/test.o
 
 clean:
 	rm -rf build/*.o
