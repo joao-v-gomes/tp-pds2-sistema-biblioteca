@@ -72,6 +72,9 @@ $(function() {
 <div class="title">menu.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Arquivo que inicializa o login no sistema.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="bibliotecario_8hpp_source.html">bibliotecario.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cliente_8hpp_source.html">cliente.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="definitions_8hpp_source.html">definitions.hpp</a>&quot;</code><br />
@@ -81,31 +84,11 @@ $(function() {
 Include dependency graph for menu.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="menu_8hpp__incl.png" border="0" usemap="#ainclude_2menu_8hpp" alt=""/></div>
-<map name="ainclude_2menu_8hpp" id="ainclude_2menu_8hpp">
-<area shape="rect" title=" " alt="" coords="288,5,427,32"/>
-<area shape="rect" href="bibliotecario_8hpp.html" title=" " alt="" coords="292,80,423,107"/>
-<area shape="rect" href="cliente_8hpp.html" title=" " alt="" coords="83,155,178,181"/>
-<area shape="rect" title=" " alt="" coords="471,379,529,405"/>
-<area shape="rect" title=" " alt="" coords="5,229,85,256"/>
-<area shape="rect" href="definitions_8hpp.html" title=" " alt="" coords="734,80,853,107"/>
-<area shape="rect" href="livro_8hpp.html" title=" " alt="" coords="225,304,303,331"/>
-<area shape="rect" href="usuarios_8hpp.html" title=" " alt="" coords="211,229,317,256"/>
-<area shape="rect" title=" " alt="" coords="384,304,427,331"/>
-<area shape="rect" href="estante_8hpp.html" title=" " alt="" coords="531,155,629,181"/>
-<area shape="rect" href="prateleira_8hpp.html" title=" " alt="" coords="443,229,557,256"/>
-<area shape="rect" title=" " alt="" coords="233,379,295,405"/>
-<area shape="rect" title=" " alt="" coords="748,155,839,181"/>
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="menu_8hpp__dep__incl.png" border="0" usemap="#ainclude_2menu_8hppdep" alt=""/></div>
-<map name="ainclude_2menu_8hppdep" id="ainclude_2menu_8hppdep">
-<area shape="rect" title=" " alt="" coords="54,5,193,32"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="5,80,111,107"/>
-<area shape="rect" href="menu_8cpp.html" title=" " alt="" coords="135,80,245,107"/>
-</map>
 </div>
 </div>
 <p><a href="menu_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -113,11 +96,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae78a46588114c8d2bf78e328b57807a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8hpp.html#ae78a46588114c8d2bf78e328b57807a4">menuLogin</a> (<a class="el" href="classUsuario.html">Usuario</a> *user)</td></tr>
+<tr class="memdesc:ae78a46588114c8d2bf78e328b57807a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o login no sistema.  <a href="menu_8hpp.html#ae78a46588114c8d2bf78e328b57807a4">More...</a><br /></td></tr>
 <tr class="separator:ae78a46588114c8d2bf78e328b57807a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2a9bf4f4fdfd73dd23aef70d5155ae1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8hpp.html#ac2a9bf4f4fdfd73dd23aef70d5155ae1">verificarLogin</a> (<a class="el" href="classUsuario.html">Usuario</a> *user, std::string usuario, std::string senha)</td></tr>
+<tr class="memdesc:ac2a9bf4f4fdfd73dd23aef70d5155ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica e inicializa as informações do usuário em questão,.  <a href="menu_8hpp.html#ac2a9bf4f4fdfd73dd23aef70d5155ae1">More...</a><br /></td></tr>
 <tr class="separator:ac2a9bf4f4fdfd73dd23aef70d5155ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Arquivo que inicializa o login no sistema. </p>
+<dl class="section author"><dt>Author</dt><dd>João </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>05-12-2022</dd></dl>
+<p>Arquivo responsável pela inicialização de um usuário, seja <a class="el" href="classCliente.html" title="Classe Cliente,.">Cliente</a> ou Bibliotecário. </p><dl class="section copyright"><dt>Copyright</dt><dd>GNU General Public License v2.0. </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae78a46588114c8d2bf78e328b57807a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae78a46588114c8d2bf78e328b57807a4">&#9670;&nbsp;</a></span>menuLogin()</h2>
 
@@ -133,7 +124,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+
+<p>Inicializa o login no sistema. </p>
+<p>Recebe um ponteiro para um <a class="el" href="classUsuario.html" title="Classe Usuario,.">Usuario</a> que, após o login, é inicializado como <a class="el" href="classCliente.html" title="Classe Cliente,.">Cliente</a> ou Bibliotecário. Retorna se o login foi de um <a class="el" href="classCliente.html" title="Classe Cliente,.">Cliente</a> ou Usuário. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">user</td><td></td></tr>
   </table>
@@ -174,7 +167,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+
+<p>Verifica e inicializa as informações do usuário em questão,. </p>
+<p>Verifica as informações de login no banco de dados e inicializa as informações do usuário que fez login. Retorna se o login foi bem sucedido ou não. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">user</td><td></td></tr>
     <tr><td class="paramname">usuario</td><td></td></tr>

@@ -73,33 +73,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="menu_8hpp_source.html">menu.hpp</a>&quot;</code><br />
+<code>#include &lt;exception&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for menu.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="menu_8cpp__incl.png" border="0" usemap="#asrc_2menu_8cpp" alt=""/></div>
-<map name="asrc_2menu_8cpp" id="asrc_2menu_8cpp">
-<area shape="rect" title=" " alt="" coords="303,5,412,32"/>
-<area shape="rect" href="menu_8hpp.html" title=" " alt="" coords="314,80,401,107"/>
-<area shape="rect" href="bibliotecario_8hpp.html" title=" " alt="" coords="292,155,423,181"/>
-<area shape="rect" href="cliente_8hpp.html" title=" " alt="" coords="83,229,178,256"/>
-<area shape="rect" title=" " alt="" coords="471,453,529,480"/>
-<area shape="rect" title=" " alt="" coords="5,304,85,331"/>
-<area shape="rect" href="definitions_8hpp.html" title=" " alt="" coords="734,155,853,181"/>
-<area shape="rect" href="livro_8hpp.html" title=" " alt="" coords="225,379,303,405"/>
-<area shape="rect" href="usuarios_8hpp.html" title=" " alt="" coords="211,304,317,331"/>
-<area shape="rect" title=" " alt="" coords="384,379,427,405"/>
-<area shape="rect" href="estante_8hpp.html" title=" " alt="" coords="531,229,629,256"/>
-<area shape="rect" href="prateleira_8hpp.html" title=" " alt="" coords="443,304,557,331"/>
-<area shape="rect" title=" " alt="" coords="233,453,295,480"/>
-<area shape="rect" title=" " alt="" coords="748,229,839,256"/>
-</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae78a46588114c8d2bf78e328b57807a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#ae78a46588114c8d2bf78e328b57807a4">menuLogin</a> (<a class="el" href="classUsuario.html">Usuario</a> *user)</td></tr>
+<tr class="memdesc:ae78a46588114c8d2bf78e328b57807a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o login no sistema.  <a href="menu_8cpp.html#ae78a46588114c8d2bf78e328b57807a4">More...</a><br /></td></tr>
 <tr class="separator:ae78a46588114c8d2bf78e328b57807a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2a9bf4f4fdfd73dd23aef70d5155ae1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#ac2a9bf4f4fdfd73dd23aef70d5155ae1">verificarLogin</a> (<a class="el" href="classUsuario.html">Usuario</a> *user, std::string usuario, std::string senha)</td></tr>
+<tr class="memdesc:ac2a9bf4f4fdfd73dd23aef70d5155ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica e inicializa as informações do usuário em questão,.  <a href="menu_8cpp.html#ac2a9bf4f4fdfd73dd23aef70d5155ae1">More...</a><br /></td></tr>
 <tr class="separator:ac2a9bf4f4fdfd73dd23aef70d5155ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -118,7 +105,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+
+<p>Inicializa o login no sistema. </p>
+<p>Recebe um ponteiro para um <a class="el" href="classUsuario.html" title="Classe Usuario,.">Usuario</a> que, após o login, é inicializado como <a class="el" href="classCliente.html" title="Classe Cliente,.">Cliente</a> ou Bibliotecário. Retorna se o login foi de um <a class="el" href="classCliente.html" title="Classe Cliente,.">Cliente</a> ou Usuário. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">user</td><td></td></tr>
   </table>
@@ -159,7 +148,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+
+<p>Verifica e inicializa as informações do usuário em questão,. </p>
+<p>Verifica as informações de login no banco de dados e inicializa as informações do usuário que fez login. Retorna se o login foi bem sucedido ou não. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">user</td><td></td></tr>
     <tr><td class="paramname">usuario</td><td></td></tr>

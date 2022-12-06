@@ -6,46 +6,56 @@
 #include <string>
 
 /**
- * @brief Armazena as caracteristicas da Prateleira
- *@details A Prateleira é uma sub-divisão da estante. Uma estante pode conter várias prateleiras.
-			Os livro, em uma mesma prateleira, tem o mesmo assunto.
+ * @file prateleira.hpp
+ * @author João 
+ * @brief  Armazena os atributos e métodos da classe Prateleira
+ * @version 1.0
+ * @date 05-12-2022
+ * @details Atributos e cabeçalhos das funções da Classe Prateleira
+ * @copyright GNU General Public License v2.0.
+ */
+
+/**
+ * @brief Classe Prateleira
+ *
+ *@details Atributos e cabeçalhos das funções da Classe Prateleira
  */
 class Prateleira {
   private:
 	/**
-	 * @brief Atributo para identificar a prateleira no banco de dados
-	 *
+	 * @brief ID da Pratelira
+	 *@details Atributo para identificar a prateleira no banco de dados
 	 */
 	int _idPrateleira;
 
 	/**
 	 * @brief Atributo com o assunto da prateleira
-	 *
+	 *@details Atributo assunto pleo qual as prateleiras são organizadas
 	 */
 	std::string _assunto;
 
 	/**
-	 * @brief Atributo com ID da estante em que a prateleira está
-	 *
+	 * @brief ID da estante
+	 *@details Atributo com ID da estante em que a prateleira está
 	 */
 	int _estanteId;
 
 	/**
-	 * @brief Lista com os livros contidos naquela prateleira
-	 *
+	 * @brief List de Livros
+	 *@details Lista com os livros contidos naquela prateleira
 	 */
 	std::list<Livro> livrosDaPrateleira;
 
   public:
 	/**
-	 * @brief Constrói um novo objeto Prateleira sem inicializar nenhum atributo
-	 *
+	 * @brief Construtor de Prateleira
+	 *@details Constrói um novo objeto Prateleira sem inicializar nenhum atributo
 	 */
 	Prateleira();
 
 	/**
-	 * @brief Constrói um novo objeto Prateleira recebendo como parâmetro o assunto e o Id da Estante
-	 *
+	 * @brief Construtor de Prateleira
+	 *@details Constrói um novo objeto Prateleira recebendo como parâmetro o assunto e o Id da Estante
 	 * @param assunto
 	 * @param estanteID
 	 */
@@ -53,56 +63,56 @@ class Prateleira {
 
 	/**
 	 * @brief Retorna o ID da prateleira
-	 *
+	 *@details Retorna o identificador de uma prateleira
 	 * @return int
 	 */
 	int getIdPrateleira();
 
 	/**
 	 * @brief Retorna o assunto da prateleira
-	 *
+	 *@details Retorna o assunto sobre o qual os livros da prateleira tratam
 	 * @return std::string
 	 */
 	std::string getAssuntoPrateleira();
 
 	/**
 	 * @brief Retorna o ID da estante da prateleira
-	 *
+	 *@details Retorna o identificador da estante de uma prateleira
 	 * @return int
 	 */
 	int getEstanteDaPrateleira();
 
 	/**
-	 * @brief Retorna o lista com os livros da prateleira
-	 *
+	 * @brief Retorna o list de Livros
+	 *@details Retorna o lista com os livros da prateleira
 	 * @return std::list<Livro>
 	 */
 	std::list<Livro> getLivroPrateleira();
 
 	/**
-	 * @brief Atualiza o id da prateleira
-	 *
+	 * @brief Set do id da prateleira
+	 *@details Atualiza o id da prateleira
 	 * @param id
 	 */
 	void setIdPrateleira(int id);
 
 	/**
-	 * @brief Atualiza o assunto da prateleira
-	 *
+	 * @brief Set do assunto da prateleira
+	 *@details Atualiza o assunto da prateleira
 	 * @param _assunto
 	 */
 	void setAssuntoPrateleira(std::string _assunto);
 
 	/**
-	 * @brief Atualiza a id da estante da prateleira
-	 *
+	 * @brief Set do id da estante da prateleira
+	 *@details Atualiza a id da estante da prateleira
 	 * @param idEstante
 	 */
 	void setEstanteDaPrateleira(int idEstante);
 
 	/**
-	 * @brief Atualiza a lista de livros da prateleira
-	 *
+	 * @brief Set da list de livros da prateleira
+	 *@details Atualiza a lista de livros da prateleira
 	 * @param listaDeLivros
 	 */
 	void setListaDeLivros(std::list<Livro> listaDeLivros);

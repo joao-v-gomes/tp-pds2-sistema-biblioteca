@@ -1,0 +1,9 @@
+digraph "Cliente"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Cliente\n||+ Cliente()\l+ Cliente()\l+ Cliente()\l+ Cliente()\l+ Cliente()\l+ reservarLivro()\l+ renovarReservar()\l+ pagarMulta()\l+ pesquisarReserva()\l+ getIdCliente()\l+ getLivrosEmprestados()\l+ getMulta()\l+ setTipoUsuario()\l+ setMulta()\l+ exibeMenu()\l+ ~Cliente()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe Cliente,."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Usuario\n|# _id\l# _tipoDeUsuario\l# _nome\l# _senha\l# _email\l# _telefone\l|+ Usuario()\l+ Usuario()\l+ pesquisarLivroPorNome()\l+ pesquisarLivroPorAutor()\l+ pesquisarLivroPorAssunto()\l+ setId()\l+ setTipoUsuario()\l+ setNome()\l+ setSenha()\l+ setEmail()\l+ setTelefone()\l+ getId()\l+ getTipoUsuario()\l+ getNome()\l+ getSenha()\l+ getEmail()\l+ getTelefone()\l+ exibeMenu()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html",tooltip="Classe Usuario,."];
+}

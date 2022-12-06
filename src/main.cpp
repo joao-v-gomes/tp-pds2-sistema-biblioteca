@@ -72,8 +72,7 @@ int main() {
 				Cliente *c = new Cliente(&user);
 
 				// colocar try-throw-catch aqui tambem
-				// se der merda, falar com o cliente e retornar pro menuCliente
-				// opcao_cliente = menuCliente();
+
 				opcao_cliente = c->exibeMenu();
 
 				switch (opcao_cliente) {
