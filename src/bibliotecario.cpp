@@ -1,5 +1,6 @@
 #include "bibliotecario.hpp"
 #include "definitions.hpp"
+#include "erros.hpp"
 #include <iostream>
 
 Bibliotecario::Bibliotecario() {
@@ -238,15 +239,12 @@ int Bibliotecario::buscaEstanteIDnobanco(std::string categoria) {
 	pqxx::connection C("dbname = biblioteca user = postgres password = 123123 host = localhost port = 5432");
 
 	if (C.is_open()) {
-		// std::cout << "Foi banco" << std::endl;
 
 		pqxx::nontransaction N(C);
 
 		std::string sql = "SELECT id FROM estantes WHERE categoria ='" + categoria + "';";
 
 		pqxx::result R(N.exec(sql));
-
-		// std::cout << "Tam R: " << R.size() << std::endl;
 
 		if (R.size() != 0) {
 			estanteID = R[0][0].as<int>();
@@ -278,6 +276,9 @@ int Bibliotecario::exibeMenu() const {
 	std::cout << "Digite a opcao escolhida: ";
 
 	std::cin >> opcao;
+	if(opcao < 1 || opcao > 12){
+		throw opcaoInvalida();
+	}
 
 	return opcao;
 }

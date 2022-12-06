@@ -2,10 +2,9 @@
 #include "menu.hpp"
 #include <iostream>
 #include <string>
+#include "erros.hpp"
 
 int main() {
-
-	// teste
 
 	int opcao = INIT;
 
@@ -16,8 +15,6 @@ int main() {
 
 		switch (opcao) {
 			case INIT:
-				// colocar o try-throw-catch aqui pra pegar alguma merda que o usuario digitar
-				// caso der merda, fazer a opcao voltar pro INIT e executar o login novamente
 					do{
 					try{
 						opcao = menuLogin(&user);
@@ -27,15 +24,6 @@ int main() {
 						std::cout <<"Erro: "<< e.what() <<std::endl;
 					}
 					}while(erro);
-				// std::cout << user.getNome() << std::endl;
-				// std::cout << user.getEmail() << std::endl;
-				// std::cout << user.getTelefone() << std::endl;
-
-				// std::cout << "Digitou: " << opcao << std::endl;
-
-				//if (opcao == LOGIN_ERRO) {
-				//	opcao = INIT;
-				//}
 
 				break;
 
@@ -71,9 +59,11 @@ int main() {
 
 				Cliente *c = new Cliente(&user);
 
-				// colocar try-throw-catch aqui tambem
-
-				opcao_cliente = c->exibeMenu();
+				try{
+                    opcao_cliente = c->exibeMenu();
+                }catch(opcaoInvalida& e){
+                    std::cout <<"Erro: "<< e.what() <<std::endl;
+                }
 
 				switch (opcao_cliente) {
 					case PESQUISAR_LIVRO_NOME_CLIENTE:
@@ -99,7 +89,7 @@ int main() {
 						opcao = SAIR;
 						break;
 					default:
-						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
+						std::cout << "Tente novamente!" << std::endl;
 						break;
 				}
 				delete c;
@@ -111,15 +101,13 @@ int main() {
 
 				int opcao_bibliotecario;
 
-				// user = new Bibliotecario(user);
 				Bibliotecario *b = new Bibliotecario(&user);
 
-				// colocar try-throw-catch aqui tambem
-				// se der merda, falar com o usuario e retornar pro menuUsuario
-				// opcao_bibliotecario = menuBibliotecario();
+				try{
 				opcao_bibliotecario = b->exibeMenu();
-
-				// std::cout << "Opcao: " << opcao_bibliotecario << std::endl;
+				} catch(opcaoInvalida& e){
+					 std::cout <<"Erro: "<< e.what() <<std::endl;
+				}
 
 				switch (opcao_bibliotecario) {
 					case PESQUISAR_LIVRO_NOME_BIBLIOTECARIO:
@@ -153,7 +141,7 @@ int main() {
 						opcao = SAIR;
 						break;
 					default:
-						std::cout << "Opcao invalida! Tente novamente!" << std::endl;
+						std::cout << "Tente novamente!" << std::endl;
 						break;
 				}
 				delete b;

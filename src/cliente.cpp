@@ -1,4 +1,6 @@
 #include "cliente.hpp"
+#include "erros.hpp"
+#include <exception>
 
 Cliente::Cliente(Usuario *usuario) {
 	_id = usuario->getId();
@@ -51,6 +53,8 @@ int Cliente::exibeMenu() const {
 	std::cout << "Digite a opcao escolhida: ";
 
 	std::cin >> opcao;
-
+	if(opcao < 1 || opcao > 10){
+		throw opcaoInvalida();
+	}
 	return opcao;
 }
