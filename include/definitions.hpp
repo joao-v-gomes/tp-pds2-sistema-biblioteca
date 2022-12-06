@@ -4,9 +4,15 @@
 #include <pqxx/pqxx>
 
 /**
- * @brief Arquivo com os #defines utilizados no código
- *
+ * @file bibliotecario.hpp
+ * @author João 
+ * @brief  Arquivo com os #defines utilizados no código
+ * @version 1.0
+ * @date 05-12-2022
+ * @details Compilado de #defines de valores utilizados constantemente ao longo do código.
+ * @copyright GNU General Public License v2.0.
  */
+
 #define SAIR				-1
 #define INIT				4
 #define LOGIN_BIBLIOTECARIO 0

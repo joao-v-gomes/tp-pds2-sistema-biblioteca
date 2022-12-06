@@ -21,6 +21,7 @@ bool Usuario::getTipoUsuario() {
 }
 
 std::string Usuario::getNome() {
+	
 	return _nome;
 }
 

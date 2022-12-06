@@ -1,4 +1,5 @@
 #include "menu.hpp"
+#include <exception>
 
 int menuLogin(Usuario *user) {
 	std::cout << "---- Bem-vindo ao Sistema de Biblioteca 42!!! -----" << std::endl;
@@ -12,6 +13,7 @@ int menuLogin(Usuario *user) {
 
 	std::cout << "\tUsuário: ";
 
+	std::cin >> usuario;
 
 	// std::string textoSenha = "\tSenha: ";
 
@@ -98,16 +100,19 @@ int verificarLogin(Usuario *user, std::string usuario, std::string senha) {
 				// 	// user = new Usuario(nomeBD, emailBD, telefoneBD);
 				// }
 			} else {
-				std::cout << "Senha incorreta!" << std::endl;
+				throw std::invalid_argument("Senha incorreta!");
+				//std::cout << "Senha incorreta!" << std::endl;
 				statusLogin = LOGIN_ERRO;
 			}
 		} else {
-			std::cout << "Login incorreto!" << std::endl;
+			throw std::invalid_argument("Login incorreto!");
+			//std::cout << "Login incorreto!" << std::endl;
 			statusLogin = LOGIN_ERRO;
 		}
 
 	} else {
-		std::cout << "Erro no banco!" << std::endl;
+		throw std::invalid_argument("Erro no banco");
+		//std::cout << "Erro no banco!" << std::endl;
 	};
 
 	return statusLogin;
